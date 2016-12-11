@@ -12,3 +12,6 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('store', 'StoreController@index');
+Route::get('products/{product}', 'ProductsController@show');
+Route::get('collections/{collection}', 'CollectionsController@show');

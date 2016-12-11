@@ -1,0 +1,19 @@
+// Mixins
+
+=font-size($size)
+    font-size: $size
+    font-size: rem($size)
+
+=opacity($opacity)
+    @if $opacity == 0
+        visibility: hidden
+    @else
+        visibility: visible
+    filter: alpha(opacity=$opacity-ie)
+    opacity: $opacity
+    $opacity-ie: $opacity * 100
+
+=clear
+    clear: both
+    content: ''
+    display: table

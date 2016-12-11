@@ -1,4 +1,5 @@
 const elixir = require('laravel-elixir');
+require('laravel-elixir-livereload');
 
 /*
  |--------------------------------------------------------------------------
@@ -13,4 +14,5 @@ const elixir = require('laravel-elixir');
 
 elixir((mix) => {
     mix.sass('app.sass');
+    mix.livereload();
 });
