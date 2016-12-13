@@ -1,8 +1,8 @@
-<section class="collections">
+<section id="featured_collections">
     <div class="wrapper">
         <div class="row">
             <div class="col-12">
-                <h2 class="title">Colecciones</h2>
+                <h2 class="section-title">Colecciones</h2>
                 <!-- /.title -->
             </div>
             <!-- /.col-12 -->

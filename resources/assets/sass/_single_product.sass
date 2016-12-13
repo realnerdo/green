@@ -1,0 +1,212 @@
+// Single Product
+
+#single-product
+    padding: 1rem 0
+    .header
+        .breadcrumbs
+            +font-size(16px)
+            color: $gray
+            .link
+                color: $green
+                text-decoration: none
+                &:hover
+                    color: $blue
+                    text-decoration: underline
+        .report
+            .link
+                +font-size(13px)
+                color: $gray
+                text-decoration: none
+                &:hover
+                    color: $red
+                    text-decoration: underline
+    .single
+        .gallery
+            .featured
+                width: 100%
+        .thumbnails
+            .list
+                list-style: none
+                .item
+                    background: $slider
+                    border-radius: rem(2px)
+                    margin-bottom: 1rem
+                    overflow: hidden
+                    position: relative
+                    .img
+                        width: 100%
+                    &.active,
+                    &:hover
+                        .img
+                            +opacity(.5)
+                            cursor: pointer
+                        &::before
+                            background: $green
+                            bottom: .5rem
+                            content: ' '
+                            height: rem(2px)
+                            left: 50%
+                            position: absolute
+                            transform: translateX(-50%)
+                            width: 80%
+        .information
+            .title
+                +font-size(28px)
+                color: $title
+                font-weight: 300
+                margin: 0
+                margin-bottom: .2rem
+            .subtitle
+                +font-size(14px)
+                color: $gray
+                font-weight: 300
+                margin-bottom: 1rem
+            .description
+                +font-size(16px)
+                color: $text
+                line-height: 1.5em
+                margin-bottom: 2rem
+            .variations
+                margin-bottom: 2rem
+                .variation
+                    display: inline-block
+                    margin-right: 1rem
+                    &:last-child
+                        margin-right: 0
+                    .title
+                        +font-size(16px)
+                        color: $title
+                        margin-bottom: .5rem
+                    .select
+                        +font-size(18px)
+                        appearance: none
+                        background: url('../img/caret-down.svg') right 1rem center no-repeat, $white
+                        border: 1px solid $border
+                        border-radius: rem(2px)
+                        color: $text
+                        padding: .8rem 2rem .8rem 1rem
+            .add-to-cart
+                .quantity
+                    .title
+                        +font-size(16px)
+                        color: $title
+                        margin-bottom: .5rem
+                    .control
+                        +font-size(28px)
+                        appearance: none
+                        background: none
+                        border: 0
+                        color: $green
+                        font-family: $montserrat
+                    .qty
+                        +font-size(28px)
+                        appearance: none
+                        background: $white
+                        border: 1px solid $border
+                        color: $green
+                        font-family: $montserrat
+                        padding: .8rem 1rem
+                        text-align: center
+                .btn
+                    +font-size(18px)
+                    width: 100%
+                    &:first-child
+                        margin-bottom: .5rem
+.reviews
+    .title
+        +font-size(20px)
+        color: $green
+        font-weight: 300
+        margin-bottom: 1rem
+        text-transform: uppercase
+    .review
+        color: $text
+        margin-top: 2rem
+        .header
+            margin-bottom: 1rem
+            .rating
+                color: $title
+                margin-bottom: .3rem
+                .stars-list
+                    display: inline-block
+            .variation
+                color: $gray
+        .link
+            color: $green
+            text-decoration: none
+            &:hover
+                color: $blue
+                text-decoration: underline
+.questions
+    .title
+        +font-size(20px)
+        color: $green
+        font-weight: 300
+        margin-bottom: 1rem
+        text-transform: uppercase
+    .subtitle
+        +font-size(13px)
+        color: $gray
+        font-weight: 300
+        margin-bottom: 1rem
+    .question_form
+        margin-bottom: 2rem
+        .input-wrapper
+            background: $white
+            border: 1px solid $border
+            border-radius: rem(2px)
+            display: inline-block
+            overflow: hidden
+            .input
+                background: none
+                border: 0
+                color: $text
+                font-family: $montserrat
+                padding: .7rem .8rem
+                width: rem(400px)
+            .btn
+                border-radius: 0
+    .conversation
+        .thread
+            margin-bottom: 1.5rem
+            .question
+                float: right
+                margin-bottom: .5rem
+                .header
+                    +font-size(13px)
+                    color: $muted
+                    margin-bottom: .2rem
+                    .link
+                        color: $green
+                        text-decoration: none
+                        &:hover
+                            color: $blue
+                            text-decoration: underline
+                .content
+                    background: $green
+                    border-radius: rem(30px)
+                    color: $white
+                    padding: .8rem 1rem
+            .answer
+                float: left
+                .header
+                    +font-size(13px)
+                    color: $muted
+                    margin-bottom: .2rem
+                    .link
+                        color: $green
+                        text-decoration: none
+                        &:hover
+                            color: $blue
+                            text-decoration: underline
+                .content
+                    background: $blue
+                    border-radius: rem(30px)
+                    color: $white
+                    padding: .8rem 1rem
+.related_products
+    .title
+        +font-size(20px)
+        color: $title
+        font-weight: 300
+        text-transform: uppercase

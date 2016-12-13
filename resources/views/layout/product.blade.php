@@ -3,7 +3,9 @@
     <div class="content">
         <h3 class="title">Título del producto</h3>
         <!-- /.title -->
-        <div class="price">$49.00</div>
+        <div class="price">
+            <span class="amount">$49.00</span>
+        </div>
         <!-- /.price -->
     </div>
     <!-- /.content -->

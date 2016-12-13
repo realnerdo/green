@@ -1,0 +1,45 @@
+// Single Collection
+
+#single-collection
+    .cover
+        border-radius: rem(2px)
+        overflow: hidden
+        position: relative
+        .content
+            background: $orange
+            box-shadow: 0 4px 8px 0 rgba($black, .2)
+            .img
+                +opacity(.8)
+                width: 100%
+            .headline
+                +font-size(44px)
+                color: $white
+                font-family: $gumption
+                left: 50%
+                padding: 2rem
+                position: absolute
+                top: 50%
+                transform: translate(-50%, -50%)
+                .text
+                    position: relative
+                    z-index: 2
+                &::before
+                    background: $orange
+                    bottom: 0
+                    content: ' '
+                    left: 0
+                    position: absolute
+                    right: 0
+                    top: 0
+                    transform: rotate(-2deg)
+    .products
+        padding: 1rem 0
+        .header
+            .title
+                +font-size(20px)
+                color: $gray
+                font-weight: 300
+            .subtitle
+                +font-size(16px)
+                color: $gray
+                font-weight: 300

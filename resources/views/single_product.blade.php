@@ -3,7 +3,7 @@
 @section('title', 'Green - Single')
 
 @section('content')
-    <section id="single">
+    <section id="single-product">
         <div class="wrapper">
             <header class="header">
                 <div class="row">
@@ -18,7 +18,7 @@
                     </div>
                     <!-- /.col-9 -->
                     <div class="col-3">
-                        <div class="report">
+                        <div class="report pull-right">
                             <a href="#" class="link">Denunciar este producto</a>
                         </div>
                         <!-- /.report -->
@@ -30,17 +30,31 @@
             <!-- /.header -->
             <article class="single">
                 <div class="row">
-                    <div class="col-6">
-                        <div class="col-5 no-padding">
+                    <div class="col-6 no-padding">
+                        <div class="col-10">
                             <div class="gallery">
-
+                                <img src="{{ asset('img/featured.jpg') }}" alt="Product" class="featured">
                             </div>
                             <!-- /.gallery -->
                         </div>
                         <!-- /.col-5 no-padding -->
-                        <div class="col-1">
+                        <div class="col-2">
                             <div class="thumbnails">
-
+                                <ul class="list">
+                                    <li class="item">
+                                        <img src="{{ asset('img/thumbnail_1.jpg') }}" alt="" class="img">
+                                    </li>
+                                    <!-- /.item -->
+                                    <li class="item">
+                                        <img src="{{ asset('img/thumbnail_2.jpg') }}" alt="" class="img">
+                                    </li>
+                                    <!-- /.item -->
+                                    <li class="item">
+                                        <img src="{{ asset('img/thumbnail_3.jpg') }}" alt="" class="img">
+                                    </li>
+                                    <!-- /.item -->
+                                </ul>
+                                <!-- /.list -->
                             </div>
                             <!-- /.thumbnails -->
                         </div>
@@ -52,17 +66,17 @@
                         <div class="information">
                             <h1 class="title">Ganchos de piedra para toallas</h1>
                             <!-- /.title -->
-                            <h2 class="subheader">
+                            <h2 class="subtitle">
                                 Quedan 7 días · Ubicado en Monterrey, NL · 16 vendidos · 6 opiniones
                             </h2>
-                            <!-- /.subheader -->
+                            <!-- /.subtitle -->
                             <div class="description">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore dolores iure iusto deleniti dolor nemo architecto perferendis molestiae quae praesentium. Consectetur repellat quaerat accusamus impedit nesciunt odio, aut corporis, quam.</p>
                             </div>
                             <!-- /.description -->
                             <div class="variations">
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-12 no-padding">
                                         <div class="variation">
                                             <h6 class="title">Material</h6>
                                             <!-- /.title -->
@@ -72,9 +86,6 @@
                                             </select>
                                         </div>
                                         <!-- /.variation -->
-                                    </div>
-                                    <!-- /.col-6 -->
-                                    <div class="col-6">
                                         <div class="variation">
                                             <h6 class="title">Color</h6>
                                             <!-- /.title -->
@@ -86,25 +97,27 @@
                                         </div>
                                         <!-- /.variation -->
                                     </div>
-                                    <!-- /.col-6 -->
+                                    <!-- /.col-12 -->
                                 </div>
                                 <!-- /.row -->
                             </div>
                             <!-- /.variations -->
                             <div class="add-to-cart">
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-12 no-padding">
                                         <div class="quantity">
-                                            <button class="qty_less">—</button>
-                                            <input type="number" class="qty" name="qty" min="0" max="100">
-                                            <button class="qty_more">+</button>
+                                            <h3 class="title">Cantidad</h3>
+                                            <!-- /.title -->
+                                            <button class="qty_less control">—</button>
+                                            <input type="number" class="qty" name="qty" min="0" max="100" value="1">
+                                            <button class="qty_more control">+</button>
                                         </div>
                                         <!-- /.quantity -->
                                     </div>
                                     <!-- /.col-6 -->
-                                    <div class="col-6">
-                                        <button class="add-to-cart-btn" type="submit">Añadir al carrito</button>
-                                        <button class="add-to-collection-btn" type="submit">Añadir a colección</button>
+                                    <div class="col-12">
+                                        <button class="add-to-cart-btn btn btn-green" type="submit">Añadir al carrito</button>
+                                        <button class="add-to-collection-btn btn btn-orange" type="button">Añadir a colección</button>
                                     </div>
                                     <!-- /.col-6 -->
                                 </div>
@@ -130,7 +143,7 @@
                             <header class="header">
                                 <div class="row">
                                     <div class="rating">
-                                        @include('layout.starts_list')
+                                        @include('layout.stars_list')
                                         <span>Satisfecho</span>
                                     </div>
                                     <!-- /.rating -->
@@ -141,22 +154,19 @@
                                     <span class="variation">Material: Piedra | Color: Gris</span>
                                 </div>
                                 <!-- /.row -->
-                                <div class="row">
-                                    <div class="content">
-                                        <p>El articulo me llegó sin problemas y el diseño está muy bien. Se ve muy resistente y me gustó el material. Lo recomiendo mucho. Gracias.</p>
-                                    </div>
-                                    <!-- /.content -->
-                                </div>
-                                <!-- /.row -->
                             </header>
                             <!-- /.header -->
+                            <div class="content">
+                                <p>El articulo me llegó sin problemas y el diseño está muy bien. Se ve muy resistente y me gustó el material. Lo recomiendo mucho. Gracias.</p>
+                            </div>
+                            <!-- /.content -->
                         </article>
                         <!-- /.review -->
                         <article class="review">
                             <header class="header">
                                 <div class="row">
                                     <div class="rating">
-                                        @include('layout.starts_list')
+                                        @include('layout.stars_list')
                                         <span>Satisfecho</span>
                                     </div>
                                     <!-- /.rating -->
@@ -167,15 +177,35 @@
                                     <span class="variation">Material: Piedra | Color: Gris</span>
                                 </div>
                                 <!-- /.row -->
+                            </header>
+                            <!-- /.header -->
+                            <div class="content">
+                                <p>El articulo me llegó sin problemas y el diseño está muy bien. Se ve muy resistente y me gustó el material. Lo recomiendo mucho. Gracias.</p>
+                            </div>
+                            <!-- /.content -->
+                        </article>
+                        <!-- /.review -->
+                        <article class="review">
+                            <header class="header">
                                 <div class="row">
-                                    <div class="content">
-                                        <p>El articulo me llegó sin problemas y el diseño está muy bien. Se ve muy resistente y me gustó el material. Lo recomiendo mucho. Gracias.</p>
+                                    <div class="rating">
+                                        @include('layout.stars_list')
+                                        <span>Satisfecho</span>
                                     </div>
-                                    <!-- /.content -->
+                                    <!-- /.rating -->
+                                </div>
+                                <!-- /.row -->
+                                <div class="row">
+                                    <span class="author">Por <a href="#" class="link">Asael</a> el 15 de Agosto del 2016</span> ·
+                                    <span class="variation">Material: Piedra | Color: Gris</span>
                                 </div>
                                 <!-- /.row -->
                             </header>
                             <!-- /.header -->
+                            <div class="content">
+                                <p>El articulo me llegó sin problemas y el diseño está muy bien. Se ve muy resistente y me gustó el material. Lo recomiendo mucho. Gracias.</p>
+                            </div>
+                            <!-- /.content -->
                         </article>
                         <!-- /.review -->
                     </section>
@@ -188,9 +218,12 @@
                         <!-- /.title -->
                         <h4 class="subtitle">Tiempo aproximado de respuesta 15 minutos</h4>
                         <!-- /.subtitle -->
-                        {{ Form::open(['url' => '/'], ['class' => 'question_form']) }}
-                            {{ Form::input('text', 'question') }}
-                            {{ Form::submit('Preguntar') }}
+                        {{ Form::open(['url' => '/', 'class' => 'question_form']) }}
+                            <div class="input-wrapper">
+                                {{ Form::input('text', 'question', null, ['class' => 'input', 'placeholder' => 'Escribe tu pregunta...']) }}
+                                {{ Form::submit('Preguntar', ['class' => 'btn btn-green']) }}
+                            </div>
+                            <!-- /.input-wrapper -->
                         {{ Form::close() }}
                         <div class="conversation">
                             <div class="thread">
@@ -287,8 +320,14 @@
             <!-- /.row -->
 
             <section class="related_products">
-                <h3 class="title">Productos relacionados</h3>
-                <!-- /.title -->
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="title">Productos relacionados</h3>
+                        <!-- /.title -->
+                    </div>
+                    <!-- /.col-12 -->
+                </div>
+                <!-- /.row -->
                 <div class="row">
                     <div class="col-3">
                         @include('layout.product')

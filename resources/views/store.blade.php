@@ -10,7 +10,7 @@
                     @include('store.sidebar')
                 </div>
                 <!-- /.col-3 -->
-                <div class="col-9">
+                <div class="col-9 no-padding">
                     @include('store.results')
                 </div>
                 <!-- /.col-9 -->

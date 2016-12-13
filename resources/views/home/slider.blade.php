@@ -4,8 +4,8 @@
             <div class="col-12">
                 <div class="glide">
                     <div class="glide__arrows">
-                        <button class="glide__arrow prev" data-dir="<">Anterior</button>
-                        <button class="glide__arrow next" data-dir=">">Siguiente</button>
+                        <button class="glide__arrow prev" data-glide-dir="<">Anterior</button>
+                        <button class="glide__arrow next" data-glide-dir=">">Siguiente</button>
                     </div>
                     <!-- /.glide__arrows -->
                     <div class="glide__wrapper">
@@ -15,27 +15,27 @@
                                 <div class="content">
                                     <h2 class="headline">Decora tu casa con los mejores productos</h2>
                                     <!-- /.headline -->
-                                    <a href="#" class="cta">Explora nuestra selección</a>
+                                    <a href="#" class="btn cta">Explora nuestra selección</a>
                                 </div>
                                 <!-- /.content -->
                             </li>
                             <!-- /.glide__slide -->
                             <li class="glide__slide">
-                                <img src="{{ asset('img/slide_2.jpg') }}" alt="" class="img">
+                                <img src="{{ asset('img/slide_1.jpg') }}" alt="" class="img">
                                 <div class="content">
                                     <h2 class="headline">Decora tu casa con los mejores productos</h2>
                                     <!-- /.headline -->
-                                    <a href="#" class="cta">Explora nuestra selección</a>
+                                    <a href="#" class="btn cta">Explora nuestra selección</a>
                                 </div>
                                 <!-- /.content -->
                             </li>
                             <!-- /.glide__slide -->
                             <li class="glide__slide">
-                                <img src="{{ asset('img/slide_3.jpg') }}" alt="" class="img">
+                                <img src="{{ asset('img/slide_1.jpg') }}" alt="" class="img">
                                 <div class="content">
                                     <h2 class="headline">Decora tu casa con los mejores productos</h2>
                                     <!-- /.headline -->
-                                    <a href="#" class="cta">Explora nuestra selección</a>
+                                    <a href="#" class="btn cta">Explora nuestra selección</a>
                                 </div>
                                 <!-- /.content -->
                             </li>

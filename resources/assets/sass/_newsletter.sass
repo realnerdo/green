@@ -1,0 +1,46 @@
+// Newsletter
+
+#newsletter
+    background: $cloud
+    border-bottom: 1px solid $border
+    border-top: 1px solid $border
+    span
+        display: inline-block
+        margin: 1.5rem 0
+    .newsletter_form
+        .input-wrapper
+            margin-left: .5rem
+            transform: translateY(.8rem)
+    .newsletter_payments
+        .payments
+            margin-left: .5rem
+            transform: translateY(.5rem)
+.newsletter_form
+    +clear
+    +font-size(13px)
+    color: $gray
+    .input-wrapper
+        background: $white
+        border: 1px solid $border
+        border-radius: rem(2px)
+        display: inline-block
+        overflow: hidden
+        .input
+            background: none
+            border: 0
+            color: $text
+            font-family: $montserrat
+            padding: .7rem .8rem
+            width: rem(200px)
+        .btn
+            border-radius: 0
+.newsletter_payments
+    +font-size(13px)
+    color: $gray
+    .payments
+        +clear
+        display: inline-block
+        list-style: none
+        .payment
+            float: left
+            margin-right: .5rem

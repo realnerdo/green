@@ -13,6 +13,18 @@ require('laravel-elixir-livereload');
  */
 
 elixir((mix) => {
-    mix.sass('app.sass');
+    mix.sass([
+        './node_modules/normalize.css/normalize.css',
+        './node_modules/glidejs/dist/css/glide.core.min.css',
+        './node_modules/glidejs/dist/css/glide.theme.min.css',
+        'app.sass'
+    ], 'public/css/app.css');
+
+    mix.scripts([
+        './node_modules/jquery/dist/jquery.min.js',
+        './node_modules/glidejs/dist/glide.min.js',
+        'app.js'
+    ], 'public/js/app.js');
+
     mix.livereload();
 });

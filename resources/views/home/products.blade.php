@@ -1,8 +1,8 @@
-<section class="products">
+<section id="featured-products">
     <div class="wrapper">
         <div class="row">
             <div class="col-12">
-                <h2 class="title">Lo más vendido</h2>
+                <h2 class="section-title">Lo más vendido</h2>
                 <!-- /.title -->
             </div>
             <!-- /.col-12 -->

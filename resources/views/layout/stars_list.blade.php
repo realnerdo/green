@@ -1,22 +1,26 @@
-<ul class="list">
+<ul class="stars-list list">
     <li class="item">
-        <img src="{{ asset('img/star.svg') }}" alt="Star" class="img">
+        <img src="{{ asset('img/star-selected.svg') }}" alt="Star" class="img">
     </li>
     <!-- /.item -->
     <li class="item">
-        <img src="{{ asset('img/star.svg') }}" alt="Star" class="img">
+        <img src="{{ asset('img/star-selected.svg') }}" alt="Star" class="img">
     </li>
     <!-- /.item -->
     <li class="item">
-        <img src="{{ asset('img/star.svg') }}" alt="Star" class="img">
+        <img src="{{ asset('img/star-selected.svg') }}" alt="Star" class="img">
     </li>
     <!-- /.item -->
     <li class="item">
-        <img src="{{ asset('img/star.svg') }}" alt="Star" class="img">
+        <img src="{{ asset('img/star-selected.svg') }}" alt="Star" class="img">
     </li>
     <!-- /.item -->
     <li class="item">
-        <img src="{{ asset('img/star.svg') }}" alt="Star" class="img">
+        <img src="{{ asset('img/star-selected.svg') }}" alt="Star" class="img">
+    </li>
+    <!-- /.item -->
+    <li class="item">
+        <a href="#" class="count">(30)</a>
     </li>
     <!-- /.item -->
 </ul>

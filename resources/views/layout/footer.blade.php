@@ -42,85 +42,85 @@
             <div class="col-2">
                 <h3 class="title">Vender</h3>
                 <!-- /.title -->
-                <div class="list">
-                    <div class="item">
-                        <div class="link">Registrarse</div>
+                <ul class="list">
+                    <li class="item">
+                        <a href="#" class="link">Registrarse</a>
                         <!-- /.link -->
-                    </div>
+                    </li>
                     <!-- /.item -->
-                    <div class="item">
-                        <div class="link">Comenzar a vender</div>
+                    <li class="item">
+                        <a href="#" class="link">Comenzar a vender</a>
                         <!-- /.link -->
-                    </div>
+                    </li>
                     <!-- /.item -->
-                    <div class="item">
-                        <div class="link">Crea tu tienda</div>
+                    <li class="item">
+                        <a href="#" class="link">Crea tu tienda</a>
                         <!-- /.link -->
-                    </div>
+                    </li>
                     <!-- /.item -->
-                    <div class="item">
-                        <div class="link">Afiliados</div>
+                    <li class="item">
+                        <a href="#" class="link">Afiliados</a>
                         <!-- /.link -->
-                    </div>
+                    </li>
                     <!-- /.item -->
-                    <div class="item">
-                        <div class="link">Preguntas frecuentes</div>
+                    <li class="item">
+                        <a href="#" class="link">Preguntas frecuentes</a>
                         <!-- /.link -->
-                    </div>
+                    </li>
                     <!-- /.item -->
-                    <div class="item">
-                        <div class="link">Ayuda</div>
+                    <li class="item">
+                        <a href="#" class="link">Ayuda</a>
                         <!-- /.link -->
-                    </div>
+                    </li>
                     <!-- /.item -->
-                </div>
+                </ul>
                 <!-- /.list -->
             </div>
             <!-- /.col-2 -->
             <div class="col-2">
                 <h3 class="title">Acerca de Green</h3>
                 <!-- /.title -->
-                <div class="list">
-                    <div class="item">
-                        <div class="link">Qué es Green</div>
+                <ul class="list">
+                    <li class="item">
+                        <a href="#" class="link">Qué es Green</a>
                         <!-- /.link -->
-                    </div>
+                    </li>
                     <!-- /.item -->
-                    <div class="item">
-                        <div class="link">Quiénes somos</div>
+                    <li class="item">
+                        <a href="#" class="link">Quiénes somos</a>
                         <!-- /.link -->
-                    </div>
+                    </li>
                     <!-- /.item -->
-                    <div class="item">
-                        <div class="link">Publicidad</div>
+                    <li class="item">
+                        <a href="#" class="link">Publicidad</a>
                         <!-- /.link -->
-                    </div>
+                    </li>
                     <!-- /.item -->
-                    <div class="item">
-                        <div class="link">Términos y condiciones</div>
+                    <li class="item">
+                        <a href="#" class="link">Términos y condiciones</a>
                         <!-- /.link -->
-                    </div>
+                    </li>
                     <!-- /.item -->
-                    <div class="item">
-                        <div class="link">Política de privacidad</div>
+                    <li class="item">
+                        <a href="#" class="link">Política de privacidad</a>
                         <!-- /.link -->
-                    </div>
+                    </li>
                     <!-- /.item -->
-                    <div class="item">
-                        <div class="link">Soporte</div>
+                    <li class="item">
+                        <a href="#" class="link">Soporte</a>
                         <!-- /.link -->
-                    </div>
+                    </li>
                     <!-- /.item -->
-                    <div class="item">
-                        <div class="link">Contacto</div>
+                    <li class="item">
+                        <a href="#" class="link">Contacto</a>
                         <!-- /.link -->
-                    </div>
+                    </li>
                     <!-- /.item -->
-                </div>
+                </ul>
                 <!-- /.list -->
             </div>
             <!-- /.col-2 -->
-            <div class="col-3">
+            <div class="col-4">
                 <h3 class="title">Newsletter</h3>
                 <!-- /.title -->
                 <div class="newsletter">
@@ -135,43 +135,46 @@
                 </div>
                 <!-- /.newsletter -->
             </div>
-            <!-- /.col-3 -->
+            <!-- /.col-4 -->
         </div>
         <!-- /.row -->
-        <div class="row">
-            <div class="col-6">
-                <span>&copy; Copyright 2016 - Green. Todos los derechos reservados.</span>
-            </div>
-            <!-- /.col-6 -->
-            <div class="col-6">
-                <div class="social">
-                    <ul class="list">
-                        <li class="item">
-                            <a href="#" class="link">
-                                <img src="{{ asset('img/facebook.svg') }}" alt="Facebook" class="img">
-                            </a>
-                        </li>
-                        <!-- /.item -->
-                        <li class="item">
-                            <a href="#" class="link">
-                                <img src="{{ asset('img/twitter.svg') }}" alt="Twitter" class="img">
-                            </a>
-                        </li>
-                        <!-- /.item -->
-                        <li class="item">
-                            <a href="#" class="link">
-                                <img src="{{ asset('img/instagram.svg') }}" alt="Instagram" class="img">
-                            </a>
-                        </li>
-                        <!-- /.item -->
-                    </ul>
-                    <!-- /.list -->
+        <div class="bottom">
+            <div class="row">
+                <div class="col-6">
+                    <span class="copyright">&copy; Copyright 2016 - Green. Todos los derechos reservados.</span>
                 </div>
-                <!-- /.social -->
+                <!-- /.col-6 -->
+                <div class="col-6">
+                    <div class="social pull-right">
+                        <ul class="list">
+                            <li class="item">
+                                <a href="#" class="link">
+                                    <img src="{{ asset('img/facebook.svg') }}" alt="Facebook" class="img">
+                                </a>
+                            </li>
+                            <!-- /.item -->
+                            <li class="item">
+                                <a href="#" class="link">
+                                    <img src="{{ asset('img/twitter.svg') }}" alt="Twitter" class="img">
+                                </a>
+                            </li>
+                            <!-- /.item -->
+                            <li class="item">
+                                <a href="#" class="link">
+                                    <img src="{{ asset('img/instagram.svg') }}" alt="Instagram" class="img">
+                                </a>
+                            </li>
+                            <!-- /.item -->
+                        </ul>
+                        <!-- /.list -->
+                    </div>
+                    <!-- /.social -->
+                </div>
+                <!-- /.col-6 -->
             </div>
-            <!-- /.col-6 -->
+            <!-- /.row -->
         </div>
-        <!-- /.row -->
+        <!-- /.bottom -->
     </div>
     <!-- /.wrapper -->
 

@@ -1,0 +1,45 @@
+// Footer
+
+#footer
+    background: url('../img/photo-footer.jpg') left top / auto 100% no-repeat, url('../img/photo-footer-fill.jpg') left top / auto 100% repeat-x
+    padding: 1rem 0
+    .title
+        +font-size(16px)
+        color: $gray
+        font-weight: 300
+        margin-bottom: 1rem
+        text-transform: uppercase
+    .list
+        list-style: none
+        .item
+            margin-bottom: .8rem
+            .link
+                +font-size(14px)
+                color: $green
+                text-decoration: none
+                &:hover
+                    color: $blue
+                    text-decoration: underline
+    .copyright
+        color: $gray
+    .social
+        .list
+            +clear
+            .item
+                float: left
+                margin-bottom: 0
+                margin-right: .5rem
+                &:last-child
+                    margin: 0
+    .newsletter_form
+        margin-bottom: 1rem
+        .input-wrapper
+            margin-top: 1rem
+    .newsletter_payments
+        .payments
+            margin-top: 1rem
+            .payment
+                &:last-child
+                    margin: 0
+    .bottom
+        border-top: 1px solid $border

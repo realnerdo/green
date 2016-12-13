@@ -8,7 +8,7 @@
                     </div>
                     <!-- /.col-10 -->
                     <div class="col-2">
-                        <div class="display">
+                        <div class="display pull-right">
                             <ul class="list">
                                 <li class="item">
                                     <button class="mode">
