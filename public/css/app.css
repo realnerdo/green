@@ -1005,6 +1005,40 @@ img {
   border-top: 1px solid #ecf0f1;
 }
 
+.form .form-group {
+  color: #58828b;
+  margin-bottom: 1.5rem;
+}
+
+.form .form-group .link {
+  color: #1abc9c;
+  text-decoration: none;
+}
+
+.form .form-group .link:hover {
+  color: #3498db;
+  text-decoration: underline;
+}
+
+.form .form-group .label {
+  color: #58828b;
+  display: block;
+  margin-bottom: .5rem;
+  width: 100%;
+}
+
+.form .form-group .input {
+  font-size: 16px;
+  font-size: 1.1428571429rem;
+  background: #fff;
+  border: 1px solid #ecf0f1;
+  border-radius: 0.1428571429rem;
+  color: #58828b;
+  font-family: "Montserrat", sans-serif;
+  padding: 1rem 1.2rem;
+  width: 100%;
+}
+
 #slider .glide {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
@@ -1535,6 +1569,25 @@ img {
   font-size: 1.1428571429rem;
   color: #95a5a6;
   font-weight: 300;
+}
+
+.section-auth {
+  padding: 2rem 0;
+}
+
+.section-auth .section-title {
+  font-size: 20px;
+  font-size: 1.4285714286rem;
+  color: #95a5a6;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  margin-top: 0;
+  text-align: center;
+}
+
+.section-auth .form {
+  margin: 0 auto;
+  width: 35.7142857143rem;
 }
 
 .product {

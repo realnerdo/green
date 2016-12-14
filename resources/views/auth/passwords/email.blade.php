@@ -1,47 +1,34 @@
-@extends('layouts.app')
+@extends('layout.base')
 
-<!-- Main Content -->
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/password/email') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Send Password Reset Link
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+<section id="reset-email" class="section-auth">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-12">
+                @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
+                <h1 class="section-title">Generar nueva contraseña</h1>
+                <!-- /.section-title -->
+                {{ Form::open(['url' => '/password/email', 'class' => 'reset-email-form form']) }}
+                    <div class="form-group">
+                        {{ Form::label('email', 'Correo electrónico', ['class' => 'label']) }}
+                        {{ Form::input('email', 'email', old('email'), ['required' => true, 'autofocus' => true, 'class' => 'input']) }}
+                    </div>
+                    <!-- /.form-group -->
+                    <div class="form-group">
+                        {{ Form::submit('Enviar Link', ['class' => 'btn btn-green']) }}
+                    </div>
+                    <!-- /.form-group -->
+                {{ Form::close() }}
             </div>
+            <!-- /.col-12 -->
         </div>
+        <!-- /.row -->
     </div>
-</div>
+    <!-- /.wrapper -->
+</section>
+<!-- /#reset-email -->
 @endsection
