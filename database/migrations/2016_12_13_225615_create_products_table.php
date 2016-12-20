@@ -18,10 +18,10 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->string('description');
-            $table->integer('seller_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('seller_id')
+            $table->foreign('user_id')
                     ->references('id')
                     ->on('users');
         });
@@ -35,7 +35,7 @@ class CreateProductsTable extends Migration
     public function down()
     {
         Schema::table('products', function(Blueprint $table) {
-            $table->dropForeign(['seller_id']);
+            $table->dropForeign(['user_id']);
         });
 
         Schema::drop('products');

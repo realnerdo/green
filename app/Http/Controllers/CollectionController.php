@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 class CollectionController extends Controller
 {
     /**
+     * Shows a list of the user collections
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $page = 'collections';
+        return view('dashboard', compact('page'));
+    }
+
+    /**
      * Show the collection.
      *
      * @return \Illuminate\Http\Response

@@ -19,13 +19,8 @@ class CreateMetasTable extends Migration
             $table->float('regular_price');
             $table->float('sale_price');
             $table->float('stock');
-            $table->integer('product_id')->unsigned();
             $table->integer('variation_id')->unsigned();
             $table->timestamps();
-
-            $table->foreign('product_id')
-                    ->references('id')
-                    ->on('products');
 
             $table->foreign('variation_id')
                     ->references('id')
@@ -41,7 +36,6 @@ class CreateMetasTable extends Migration
     public function down()
     {
         Schema::table('metas', function(Blueprint $table) {
-            $table->dropForeign(['product_id']);
             $table->dropForeign(['variation_id']);
         });
 

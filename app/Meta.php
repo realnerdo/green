@@ -19,17 +19,17 @@ class Meta extends Model
 
     /**
      * Get the product associated to the meta
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function product() {
-        return $this->belongsTo('App\Product');
+        return $this->hasOne('App\Product');
     }
 
     /**
      * Get the variation associated to the meta
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function variation() {
-        return $this->belongsTo('App\Variation');
+        return $this->hasOne('App\Variation');
     }
 }

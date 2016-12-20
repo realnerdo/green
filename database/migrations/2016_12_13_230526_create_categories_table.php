@@ -18,6 +18,7 @@ class CreateCategoriesTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->string('description');
+            $table->timestamps();
         });
 
         Schema::create('category_product', function(Blueprint $table) {

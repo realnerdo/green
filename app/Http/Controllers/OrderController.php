@@ -4,17 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class OrderController extends Controller
 {
-
     /**
-     * Show the dashboard.
+     * Shows a list of the user orders
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $page = 'summary';
+        $page = 'orders';
         return view('dashboard', compact('page'));
     }
 }

@@ -18,4 +18,16 @@ Route::get('collection', 'CollectionController@show');
 
 Auth::routes();
 
-Route::get('dashboard', 'DashboardController@index');
+Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
+    Route::get('/', 'DashboardController@index');
+
+    Route::get('productos', 'ProductController@index');
+    Route::get('productos/nuevo', 'ProductController@create');
+    Route::post('productos', 'ProductController@store');
+    Route::get('productos/{product}/editar', 'ProductController@edit');
+    Route::put('productos/{product}', 'ProductController@update');
+    Route::delete('productos/{product}', 'ProductController@destroy');
+
+    Route::get('colecciones', 'CollectionController@index');
+    Route::get('pedidos', 'OrderController@index');
+});

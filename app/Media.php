@@ -8,9 +8,27 @@ use App\Collection;
 use App\Page;
 use App\Products;
 use App\User;
+use Cviebrock\EloquentSluggable\Sluggable;
 
 class Media extends Model
 {
+    use Sluggable;
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
+
+    protected $table = 'medias';
     /**
      * The attributes that are mass assignable.
      * @var array

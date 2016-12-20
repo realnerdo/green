@@ -18,6 +18,7 @@ class CreateVariationsTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->string('description');
+            $table->timestamps();
         });
 
         Schema::create('product_variation', function(Blueprint $table) {

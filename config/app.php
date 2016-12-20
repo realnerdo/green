@@ -183,6 +183,16 @@ return [
          */
         Collective\Html\HtmlServiceProvider::class,
 
+        /*
+         * Intervention Image
+         */
+        Intervention\Image\ImageServiceProvider::class,
+
+        /*
+         * Eloquent Sluggable
+         */
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
+
     ],
 
     /*
@@ -236,6 +246,11 @@ return [
          */
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+
+        /*
+         * Intervention Image
+         */
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 
