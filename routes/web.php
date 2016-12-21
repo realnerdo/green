@@ -12,9 +12,12 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::get('store', 'StoreController@index');
-Route::get('product', 'ProductController@show');
-Route::get('collection', 'CollectionController@show');
+Route::get('busqueda', 'SearchController@index');
+Route::get('producto/{product}', 'ProductController@show');
+Route::get('coleccion', 'CollectionController@show');
+Route::get('carrito', 'StoreController@cart');
+Route::get('pago', 'StoreController@checkout');
+Route::get('gracias', 'StoreController@thankyou');
 
 Auth::routes();
 

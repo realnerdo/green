@@ -24,22 +24,24 @@
                 <div class="col-5 no-padding">
                     <ul class="list pull-right">
                         <li class="item">
-                            <a href="#" class="btn btn-green">Vender</a>
+                            <a href="#" class="sell btn btn-green">Vender</a>
                         </li>
                         <li class="item">
                             <img src="{{ asset('img/notification.svg') }}" alt="" class="icon">
                         </li>
                         <li class="item">
-                            <img src="{{ asset('img/cart.svg') }}" alt="" class="icon">
+                            <a href="{{ url('carrito') }}" class="link">
+                                <img src="{{ asset('img/cart.svg') }}" alt="" class="icon">
+                            </a>
                         </li>
                         <li class="item">
-                            <div class="profile">
+                            <a href="{{ url('dashboard') }}" class="profile">
                                 <div class="photo">
                                     <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg" alt="" class="img">
                                 </div>
                                 <!-- /.photo -->
                                 <img src="{{ asset('img/caret-down.svg') }}" alt="" class="icon">
-                            </div><!-- /profile -->
+                            </a><!-- /profile -->
                         </li>
                     </ul><!-- /list -->
 

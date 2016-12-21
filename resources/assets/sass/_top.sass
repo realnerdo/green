@@ -10,7 +10,7 @@
         .search-form
             +clear
             background: $white
-            border-radius: rem(2px)
+            border-radius: rem(3px)
             box-shadow: 0 4px 8px 0 rgba($black, .15)
             overflow: hidden
             .input
@@ -38,6 +38,9 @@
             .btn
                 border-bottom: 1px solid $green
                 border-radius: 0
+                border-top: 1px solid $green
+    .sell
+        box-shadow: 0 4px 8px 0 rgba($black, .15)
     .list
         +clear
         list-style: none
@@ -47,6 +50,8 @@
             .icon
                 transform: translateY(50%)
             .profile
+                display: block
+                text-decoration: none
                 .photo
                     border-radius: 50%
                     display: inline-block

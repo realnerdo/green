@@ -1424,6 +1424,7 @@ img {
   display: inline-block;
   font-family: "Montserrat", sans-serif;
   padding: .7rem 1rem;
+  text-align: center;
   text-decoration: none;
 }
 
@@ -1472,7 +1473,7 @@ img {
   content: '';
   display: table;
   background: #fff;
-  border-radius: 0.1428571429rem;
+  border-radius: 0.2142857143rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
   overflow: hidden;
 }
@@ -1512,6 +1513,11 @@ img {
 #top #search .search-form .btn {
   border-bottom: 1px solid #1abc9c;
   border-radius: 0;
+  border-top: 1px solid #1abc9c;
+}
+
+#top .sell {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
 }
 
 #top .list {
@@ -1529,6 +1535,11 @@ img {
 #top .list .item .icon {
   -webkit-transform: translateY(50%);
   transform: translateY(50%);
+}
+
+#top .list .item .profile {
+  display: block;
+  text-decoration: none;
 }
 
 #top .list .item .profile .photo {
@@ -1765,6 +1776,18 @@ img {
 .table .tr .th .price,
 .table .tr .td .price {
   color: #1abc9c;
+}
+
+.table .tr .th .link,
+.table .tr .td .link {
+  color: #406661;
+  text-decoration: none;
+}
+
+.table .tr .th .link:hover,
+.table .tr .td .link:hover {
+  color: #1abc9c;
+  text-decoration: underline;
 }
 
 #pagination .info {
@@ -2328,6 +2351,151 @@ img {
   font-weight: 300;
 }
 
+#cart {
+  padding: 2rem 0;
+}
+
+#cart .section-title {
+  font-size: 24px;
+  font-size: 1.7142857143rem;
+  color: #406661;
+  font-weight: 300;
+  margin: 0;
+}
+
+#cart .qty {
+  font-size: 16px;
+  font-size: 1.1428571429rem;
+  background: #fff;
+  border: 1px solid #ecf0f1;
+  border-radius: 0.1428571429rem;
+  color: #58828b;
+  font-family: "Montserrat", sans-serif;
+  padding: 1rem 1.2rem;
+  width: 7.1428571429rem;
+}
+
+#cart .summary {
+  font-size: 18px;
+  font-size: 1.2857142857rem;
+  background: #f3fef9;
+  border-radius: 0.2142857143rem;
+  padding: 1rem;
+  text-align: right;
+}
+
+#cart .summary .title {
+  color: #406661;
+}
+
+#cart .summary .price {
+  color: #1abc9c;
+}
+
+#cart .summary .place-order .btn {
+  font-size: 18px;
+  font-size: 1.2857142857rem;
+}
+
+#checkout {
+  padding: 2rem 0;
+}
+
+#checkout .section-title {
+  font-size: 24px;
+  font-size: 1.7142857143rem;
+  color: #406661;
+  font-weight: 300;
+  margin: 0;
+}
+
+#checkout .title {
+  font-size: 18px;
+  font-size: 1.2857142857rem;
+  color: #406661;
+  font-weight: 300;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+#checkout .summary .title {
+  font-size: 14px;
+  font-size: 1rem;
+}
+
+#checkout .summary .totals {
+  margin-top: 1rem;
+  text-align: right;
+}
+
+#checkout .summary .totals .price {
+  font-size: 16px;
+  font-size: 1.1428571429rem;
+  color: #1abc9c;
+}
+
+#checkout .summary .totals .place-order .btn {
+  font-size: 18px;
+  font-size: 1.2857142857rem;
+}
+
+#thankyou {
+  padding: 2rem 0;
+}
+
+#thankyou .section-title {
+  font-size: 30px;
+  font-size: 2.1428571429rem;
+  color: #406661;
+  margin: 0;
+  text-align: center;
+}
+
+#thankyou .text {
+  font-size: 16px;
+  font-size: 1.1428571429rem;
+  color: #58828b;
+  line-height: 1.5em;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+#thankyou .text .link {
+  color: #1abc9c;
+  text-decoration: none;
+}
+
+#thankyou .text .link:hover {
+  text-decoration: underline;
+}
+
+#thankyou .text p {
+  margin-bottom: .5rem;
+}
+
+#thankyou .summary .title {
+  font-size: 14px;
+  font-size: 1rem;
+}
+
+#thankyou .summary .totals {
+  margin-top: 1rem;
+  text-align: right;
+}
+
+#thankyou .summary .totals .title {
+  font-size: 18px;
+  font-size: 1.2857142857rem;
+  color: #406661;
+  font-weight: 300;
+}
+
+#thankyou .summary .totals .price {
+  font-size: 16px;
+  font-size: 1.1428571429rem;
+  color: #1abc9c;
+}
+
 .section-auth {
   padding: 2rem 0;
 }
@@ -2350,6 +2518,7 @@ img {
 .product {
   border-radius: 0.1428571429rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: block;
   overflow: hidden;
   position: relative;
 }
@@ -2403,6 +2572,7 @@ img {
 .collection {
   border-radius: 0.1428571429rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: block;
   overflow: hidden;
   position: relative;
 }

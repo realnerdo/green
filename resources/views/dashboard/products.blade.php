@@ -42,15 +42,15 @@
                                 </td>
                                 <!-- /.td -->
                                 <td class="td">
-                                    <span class="title">{{ $product->title }}</span>
+                                    <span class="title"><a href="{{ url('producto/'.$product->variations->first()->slug) }}" class="link">{{ $product->title }}</a></span>
                                 </td>
                                 <!-- /.td -->
                                 <td class="td">
-                                    <span class="price">${{ $product->price }}</span>
+                                    <span class="price">${{ $product->variations->first()->meta->sale_price }}</span>
                                 </td>
                                 <!-- /.td -->
                                 <td class="td">
-                                    <span class="stock">28</span>
+                                    <span class="stock">{{ $product->variations->first()->meta->stock }}</span>
                                 </td>
                                 <!-- /.td -->
                                 <td class="td">
@@ -75,42 +75,12 @@
     <div id="pagination">
         <div class="row">
             <div class="col-6">
-                <div class="info">Página 1 — Mostrando productos 1-5 de 28</div>
+                <div class="info">Página {{ $products->currentPage() }} — Mostrando {{ $products->perPage() }} productos de {{ $products->total() }}</div>
                 <!-- /.info -->
             </div>
             <!-- /.col-6 -->
             <div class="col-6">
-                <ul class="list">
-                    <li class="item">
-                        <a href="#" class="link btn btn-green"><<</a>
-                    </li>
-                    <!-- /.item -->
-                    <li class="item">
-                        <a href="#" class="link btn btn-green"><</a>
-                    </li>
-                    <!-- /.item -->
-                    <li class="item">
-                        <span class="active btn btn-gray">1</span>
-                    </li>
-                    <!-- /.item -->
-                    <li class="item">
-                        <a href="#" class="link btn btn-green">2</a>
-                    </li>
-                    <!-- /.item -->
-                    <li class="item">
-                        <a href="#" class="link btn btn-green">3</a>
-                    </li>
-                    <!-- /.item -->
-                    <li class="item">
-                        <a href="#" class="link btn btn-green">></a>
-                    </li>
-                    <!-- /.item -->
-                    <li class="item">
-                        <a href="#" class="link btn btn-green">>></a>
-                    </li>
-                    <!-- /.item -->
-                </ul>
-                <!-- /.list -->
+                {{ $products->links() }}
             </div>
             <!-- /.col-6 -->
         </div>

@@ -65,8 +65,7 @@
                         </td>
                         <!-- /.td -->
                         <td class="td">
-                            <button class="btn btn-green">Editar</button>
-                            <button class="btn btn-red">Eliminar</button>
+                            <button class="btn btn-blue">Ver detalles</button>
                         </td>
                         <!-- /.td -->
                     </tr>
@@ -105,8 +104,7 @@
                         </td>
                         <!-- /.td -->
                         <td class="td">
-                            <button class="btn btn-green">Editar</button>
-                            <button class="btn btn-red">Eliminar</button>
+                            <button class="btn btn-blue">Ver detalles</button>
                         </td>
                         <!-- /.td -->
                     </tr>
@@ -145,8 +143,7 @@
                         </td>
                         <!-- /.td -->
                         <td class="td">
-                            <button class="btn btn-green">Editar</button>
-                            <button class="btn btn-red">Eliminar</button>
+                            <button class="btn btn-blue">Ver detalles</button>
                         </td>
                         <!-- /.td -->
                     </tr>
@@ -185,8 +182,7 @@
                         </td>
                         <!-- /.td -->
                         <td class="td">
-                            <button class="btn btn-green">Editar</button>
-                            <button class="btn btn-red">Eliminar</button>
+                            <button class="btn btn-blue">Ver detalles</button>
                         </td>
                         <!-- /.td -->
                     </tr>
@@ -225,8 +221,7 @@
                         </td>
                         <!-- /.td -->
                         <td class="td">
-                            <button class="btn btn-green">Editar</button>
-                            <button class="btn btn-red">Eliminar</button>
+                            <button class="btn btn-blue">Ver detalles</button>
                         </td>
                         <!-- /.td -->
                     </tr>

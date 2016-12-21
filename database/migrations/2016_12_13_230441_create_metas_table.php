@@ -17,7 +17,7 @@ class CreateMetasTable extends Migration
             $table->increments('id');
             $table->string('sku');
             $table->float('regular_price');
-            $table->float('sale_price');
+            $table->float('sale_price')->nullable();
             $table->float('stock');
             $table->integer('variation_id')->unsigned();
             $table->timestamps();

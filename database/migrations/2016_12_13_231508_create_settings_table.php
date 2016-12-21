@@ -16,7 +16,7 @@ class CreateSettingsTable extends Migration
         Schema::create('settings', function(Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('description');
+            $table->text('description');
             $table->string('footer');
             $table->integer('favicon')->unsigned();
             $table->integer('logo')->unsigned();

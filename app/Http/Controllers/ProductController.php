@@ -28,11 +28,14 @@ class ProductController extends Controller
     /**
      * Shows the single product.
      *
+     * @param  Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show(Product $product)
     {
-        return view('single_product');
+        $single = $product;
+        $related = Product::take(4)->get();
+        return view('single_product', compact('single', 'related'));
     }
 
     /**

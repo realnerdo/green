@@ -10,9 +10,8 @@
                     <div class="col-9">
                         <div class="breadcrumbs">
                             <a href="{{ url('/') }}" class="link">Volver al listado</a> |
-                            <a href="#" class="link">Hogar</a> -
-                            <a href="#" class="link">Baño</a> -
-                            <span class="current">Ganchos de piedra para toallas</span>
+                            <a href="{{ url('categoria/'.$single->categories->first()->slug) }}" class="link">{{ $single->categories->first()->title }}</a> -
+                            <span class="current">{{ $single->variations->first()->title }}</span>
                         </div>
                         <!-- /.breadcrumbs -->
                     </div>
@@ -33,7 +32,7 @@
                     <div class="col-6 no-padding">
                         <div class="col-10">
                             <div class="gallery">
-                                <img src="{{ asset('img/featured.jpg') }}" alt="Product" class="featured">
+                                <img src="{{ $single->medias->first()->url }}" alt="{{ $single->variations->first()->title }}" class="featured">
                             </div>
                             <!-- /.gallery -->
                         </div>
@@ -64,17 +63,17 @@
 
                     <div class="col-6">
                         <div class="information">
-                            <h1 class="title">Ganchos de piedra para toallas</h1>
+                            <h1 class="title">{{ $single->variations->first()->title }}</h1>
                             <!-- /.title -->
                             <h2 class="subtitle">
                                 Quedan 7 días · Ubicado en Monterrey, NL · 16 vendidos · 6 opiniones
                             </h2>
                             <!-- /.subtitle -->
                             <div class="description">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore dolores iure iusto deleniti dolor nemo architecto perferendis molestiae quae praesentium. Consectetur repellat quaerat accusamus impedit nesciunt odio, aut corporis, quam.</p>
+                                {{ $single->variations->first()->description }}
                             </div>
                             <!-- /.description -->
-                            <div class="variations">
+                            {{-- <div class="variations">
                                 <div class="row">
                                     <div class="col-12 no-padding">
                                         <div class="variation">
@@ -101,7 +100,7 @@
                                 </div>
                                 <!-- /.row -->
                             </div>
-                            <!-- /.variations -->
+                            <!-- /.variations --> --}}
                             <div class="add-to-cart">
                                 <div class="row">
                                     <div class="col-12 no-padding">
@@ -116,8 +115,10 @@
                                     </div>
                                     <!-- /.col-6 -->
                                     <div class="col-12">
-                                        <button class="add-to-cart-btn btn btn-green" type="submit">Añadir al carrito</button>
-                                        <button class="add-to-collection-btn btn btn-orange" type="button">Añadir a colección</button>
+                                        {{-- <button class="add-to-cart-btn btn btn-green" type="submit">Añadir al carrito</button>
+                                        <button class="add-to-collection-btn btn btn-orange" type="button">Añadir a colección</button> --}}
+                                        <a href="{{ url('carrito') }}" class="add-to-cart-btn btn btn-green">Añadir al carrito</a>
+                                        <a href="{{ url('coleccion') }}" class="add-to-collection-btn btn btn-orange">Añadir a colección</a>
                                     </div>
                                     <!-- /.col-6 -->
                                 </div>
@@ -329,22 +330,14 @@
                 </div>
                 <!-- /.row -->
                 <div class="row">
-                    <div class="col-3">
-                        @include('layout.product')
-                    </div>
-                    <!-- /.col-3 -->
-                    <div class="col-3">
-                        @include('layout.product')
-                    </div>
-                    <!-- /.col-3 -->
-                    <div class="col-3">
-                        @include('layout.product')
-                    </div>
-                    <!-- /.col-3 -->
-                    <div class="col-3">
-                        @include('layout.product')
-                    </div>
-                    <!-- /.col-3 -->
+                    @if (!$related->isEmpty())
+                        @foreach ($related as $product)
+                            <div class="col-3">
+                                @include('layout.product')
+                            </div>
+                            <!-- /.col-3 -->
+                        @endforeach
+                    @endif
                 </div>
                 <!-- /.row -->
             </section>
