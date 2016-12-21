@@ -12,9 +12,9 @@
                     </div><!-- /logo -->
 
                     <div id="search">
-                        {{ Form::open(['url' => '/', 'class' => 'search-form']) }}
-                            {{ Form::input('search', 'search', null, ['class' => 'input', 'placeholder' => 'Buscar...']) }}
-                            {{ Form::select('category', ['Todas las categorías', 'Categoría de ejemplo', 'Otra categoría'], null, ['class' => 'select']) }}
+                        {{ Form::open(['url' => 'busqueda', 'class' => 'search-form']) }}
+                            {{ Form::input('search', 'search', (isset($s)) ? $s : null, ['class' => 'input', 'placeholder' => 'Buscar...']) }}
+                            {{ Form::select('category', $search_categories, null, ['class' => 'select']) }}
                             {{ Form::submit('Buscar', ['class' => 'btn btn-green']) }}
                         {{ Form::close() }}
                     </div><!-- /search -->

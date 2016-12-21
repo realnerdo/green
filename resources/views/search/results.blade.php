@@ -3,7 +3,7 @@
             <header class="header">
                 <div class="row">
                     <div class="col-10">
-                        <h2 class="title">Se encontraron <strong>52</strong> productos para "<strong>eco friendly</strong>"</h2>
+                        <h2 class="title">Se encontraron <strong>{{ $products->count() }}</strong> productos para "<strong>{{ $s }}</strong>"</h2>
                         <!-- /.title -->
                     </div>
                     <!-- /.col-10 -->
@@ -34,30 +34,14 @@
             <!-- /.header -->
         <div class="products">
             <div class="row">
-                <div class="col-4">
-                    @include('layout.product')
-                </div>
-                <!-- /.col-4 -->
-                <div class="col-4">
-                    @include('layout.product')
-                </div>
-                <!-- /.col-4 -->
-                <div class="col-4">
-                    @include('layout.product')
-                </div>
-                <!-- /.col-4 -->
-                <div class="col-4">
-                    @include('layout.product')
-                </div>
-                <!-- /.col-4 -->
-                <div class="col-4">
-                    @include('layout.product')
-                </div>
-                <!-- /.col-4 -->
-                <div class="col-4">
-                    @include('layout.product')
-                </div>
-                <!-- /.col-4 -->
+                @if (!$products->isEmpty())
+                    @foreach ($products as $product)
+                        <div class="col-4">
+                            @include('layout.product')
+                        </div>
+                        <!-- /.col-4 -->
+                    @endforeach
+                @endif
             </div>
             <!-- /.row -->
         </div>

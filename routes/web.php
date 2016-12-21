@@ -13,6 +13,7 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('busqueda', 'SearchController@index');
+Route::post('busqueda', 'SearchController@search');
 Route::get('producto/{product}', 'ProductController@show');
 Route::get('coleccion', 'CollectionController@show');
 Route::get('carrito', 'StoreController@cart');
