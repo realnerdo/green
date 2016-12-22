@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="6px" viewBox="0 0 11 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.1 (35376) - http://www.bohemiancoding.com/sketch -->
+    <title>Expand_More</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="topbar" transform="translate(-731.000000, -31.000000)" fill="#F39C12">
+            <g id="search">
+                <g transform="translate(267.000000, 18.000000)">
+                    <g id="categories" transform="translate(299.000000, 8.000000)">
+                        <path d="M174.850885,5.16005769 L170.389731,9.62228846 L165.928577,5.15951923 C165.715885,4.94682692 165.371808,4.94682692 165.159115,5.15951923 C164.946962,5.37221154 164.946962,5.71682692 165.159115,5.92951923 L170.004731,10.77675 L170.004731,10.77675 L170.004731,10.77675 C170.216885,10.9894423 170.5615,10.9894423 170.773654,10.77675 L175.619269,5.92951923 C175.831423,5.71682692 175.831423,5.37167308 175.619269,5.15898077 C175.407654,4.94736538 175.063038,4.94736538 174.850885,5.16005769 L174.850885,5.16005769 Z" id="Expand_More"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,64 @@
+// Top
+
+#top
+    #main-logo
+        display: inline-block
+        margin-right: 1rem
+        transform: translateY(-50%)
+    #search
+        display: inline-block
+        .search-form
+            +clear
+            background: $white
+            border-radius: rem(3px)
+            box-shadow: 0 4px 8px 0 rgba($black, .15)
+            overflow: hidden
+            .input
+                +font-size(13px)
+                appearance: none
+                border: 0
+                border-bottom: 2px solid $green
+                font-family: $montserrat
+                outline: none
+                padding: .8rem 1rem
+                width: 15rem
+            .select
+                +font-size(13px)
+                appearance: none
+                background: url('../img/caret-down.svg') no-repeat, $white
+                background-position: right 1rem center
+                border: 0
+                border-bottom: 2px solid $orange
+                border-radius: 0
+                color: $orange
+                font-family: $montserrat
+                outline: none
+                padding: .8rem 3rem .8rem 1rem
+                position: relative
+            .btn
+                border-bottom: 1px solid $green
+                border-radius: 0
+                border-top: 1px solid $green
+    .sell
+        box-shadow: 0 4px 8px 0 rgba($black, .15)
+    .list
+        +clear
+        list-style: none
+        .item
+            float: left
+            margin-right: 1rem
+            .icon
+                transform: translateY(50%)
+            .profile
+                display: block
+                text-decoration: none
+                .photo
+                    border-radius: 50%
+                    display: inline-block
+                    height: rem(32px)
+                    overflow: hidden
+                    width: rem(32px)
+                    .img
+                        width: 100%
+                .icon
+                    transform: translateY(-130%)

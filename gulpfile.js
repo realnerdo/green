@@ -1,4 +1,5 @@
 const elixir = require('laravel-elixir');
+require('laravel-elixir-livereload');
 
 /*
  |--------------------------------------------------------------------------
@@ -12,5 +13,20 @@ const elixir = require('laravel-elixir');
  */
 
 elixir((mix) => {
-    mix.sass('app.sass');
+    mix.sass([
+        './node_modules/normalize.css/normalize.css',
+        './node_modules/glidejs/dist/css/glide.core.min.css',
+        './node_modules/glidejs/dist/css/glide.theme.min.css',
+        './node_modules/select2/dist/css/select2.min.css',
+        'app.sass'
+    ], 'public/css/app.css');
+
+    mix.scripts([
+        './node_modules/jquery/dist/jquery.min.js',
+        './node_modules/glidejs/dist/glide.min.js',
+        './node_modules/select2/dist/js/select2.min.js',
+        'app.js'
+    ], 'public/js/app.js');
+
+    mix.livereload();
 });

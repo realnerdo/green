@@ -1,0 +1,27 @@
+// Collection
+
+.collection
+    border-radius: rem(2px)
+    box-shadow: 0 4px 8px 0 rgba($black, .2)
+    display: block
+    overflow: hidden
+    position: relative
+    &::before
+        background: linear-gradient(top, rgba($white, .3), rgba($black, .7))
+        bottom: 0
+        content: ' '
+        left: 0
+        position: absolute
+        right: 0
+        top: 0
+    .img
+        width: 100%
+    .title
+        +font-size(26px)
+        color: $white
+        font-family: $gumption
+        left: 50%
+        position: absolute
+        text-align: center
+        top: 50%
+        transform: translate(-50%, -50%)

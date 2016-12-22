@@ -1,0 +1,32 @@
+// Slider
+
+#slider
+    .glide
+        box-shadow: 0 4px 8px 0 rgba($black, .2)
+        .glide__wrapper
+            .glide__track
+                .glide__slide
+                    background: $slider
+                    position: relative
+                    .img
+                        +opacity(0.5)
+                        border-radius: rem(2px)
+                        width: 100%
+                    .content
+                        left: 50%
+                        position: absolute
+                        text-align: center
+                        top: 50%
+                        transform: translate(-50%, -50%)
+                        width: 80%
+                        .headline
+                            +font-size(44px)
+                            color: $white
+                            font-family: $gumption
+                            margin-bottom: 2rem
+                        .cta
+                            +font-size(20px)
+                            border: 2px solid $white
+                            border-radius: rem(3px)
+                            color: $white
+                            text-decoration: none

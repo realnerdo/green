@@ -1,5 +1,8 @@
 @extends('layout.base')
 
 @section('content')
-    <h1>This is the home</h1>
+    @include('home.slider')
+    @include('home.products')
+    @include('home.newsletter')
+    @include('home.collections')
 @endsection

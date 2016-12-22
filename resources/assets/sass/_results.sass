@@ -1,0 +1,25 @@
+// Results
+
+#results
+    padding: 1rem 0
+    .header
+        .title
+            +font-size(16px)
+            color: $gray
+            font-weight: 300
+            strong
+                color: $green
+        .display
+            .list
+                +clear
+                list-style: none
+                .item
+                    float: left
+                    &:first-child
+                        margin-right: .5rem
+                    .mode
+                        appearance: none
+                        background: none
+                        border: 0
+                        &:hover
+                            cursor: pointer

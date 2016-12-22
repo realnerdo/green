@@ -178,6 +178,21 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Laravel Collective
+         */
+        Collective\Html\HtmlServiceProvider::class,
+
+        /*
+         * Intervention Image
+         */
+        Intervention\Image\ImageServiceProvider::class,
+
+        /*
+         * Eloquent Sluggable
+         */
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
+
     ],
 
     /*
@@ -225,6 +240,17 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        /*
+         * Laravel Collective
+         */
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+
+        /*
+         * Intervention Image
+         */
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 

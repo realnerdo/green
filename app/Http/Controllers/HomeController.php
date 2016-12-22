@@ -3,16 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class HomeController extends Controller
 {
     /**
-     * Shows the Home page
+     * Show the home page.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('home');
+        $products = Product::take(4)->get();
+        return view('home', compact('products'));
     }
 }
