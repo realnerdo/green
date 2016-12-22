@@ -1790,6 +1790,11 @@ img {
   text-decoration: underline;
 }
 
+.table .tr .th .delete-form,
+.table .tr .td .delete-form {
+  display: inline-block;
+}
+
 #pagination .info {
   font-size: 14px;
   font-size: 1rem;

@@ -1,12 +1,12 @@
-<section id="dashboard-products">
+<section id="dashboard-categories">
     <div class="row">
         <div class="col-7">
-            <h1 class="section-title">Mis Productos</h1>
+            <h1 class="section-title">Categorías</h1>
             <!-- /.title -->
         </div>
         <!-- /.col-7 -->
         <div class="col-5">
-            <a href="{{ url('dashboard/productos/nuevo') }}" class="add btn btn-green">Agregar nuevo</a>
+            <a href="{{ url('dashboard/categorias/nueva') }}" class="add btn btn-green">Agregar nueva</a>
         </div>
         <!-- /.col-5 -->
     </div>
@@ -16,13 +16,9 @@
             <table class="table">
                 <thead class="thead">
                     <tr class="tr">
-                        <th class="th">Foto</th>
-                        <!-- /.th -->
                         <th class="th">Título</th>
                         <!-- /.th -->
-                        <th class="th">Precio</th>
-                        <!-- /.th -->
-                        <th class="th">En existencia</th>
+                        <th class="th">Descripción</th>
                         <!-- /.th -->
                         <th class="th">Opciones</th>
                         <!-- /.th -->
@@ -31,31 +27,20 @@
                 </thead>
                 <!-- /.thead -->
                 <tbody class="tbody">
-                    @if (!$products->isEmpty())
-                        @foreach ($products as $product)
+                    @if (!$categories->isEmpty())
+                        @foreach ($categories as $category)
                             <tr class="tr">
                                 <td class="td">
-                                    <div class="photo">
-                                        <img src="{{ $product->medias->first()->url }}" alt="Título" class="img">
-                                    </div>
-                                    <!-- /.photo -->
+                                    <span class="title"><a href="{{ url('categoria/'.$category->slug) }}" class="link">{{ $category->title }}</a></span>
                                 </td>
                                 <!-- /.td -->
                                 <td class="td">
-                                    <span class="title"><a href="{{ url('producto/'.$product->variations->first()->slug) }}" class="link">{{ $product->title }}</a></span>
+                                    <span>{{ $category->description }}</span>
                                 </td>
                                 <!-- /.td -->
                                 <td class="td">
-                                    <span class="price">${{ $product->variations->first()->meta->sale_price }}</span>
-                                </td>
-                                <!-- /.td -->
-                                <td class="td">
-                                    <span class="stock">{{ $product->variations->first()->meta->stock }}</span>
-                                </td>
-                                <!-- /.td -->
-                                <td class="td">
-                                    <a href="{{ url('dashboard/productos/'.$product->slug.'/editar') }}" class="btn btn-green">Editar</a>
-                                    {!! Form::open(['url' => url('dashboard/productos', $product->slug), 'method' => 'DELETE', 'class' => 'delete-form']) !!}
+                                    <a href="{{ url('dashboard/categorias/'.$category->slug.'/editar') }}" class="btn btn-green">Editar</a>
+                                    {!! Form::open(['url' => url('dashboard/categorias', $category->slug), 'method' => 'DELETE', 'class' => 'delete-form']) !!}
                                         <button type="submit" class="btn btn-red">Eliminar</button>
                                     {!! Form::close() !!}
                                 </td>
@@ -75,12 +60,12 @@
     <div id="pagination">
         <div class="row">
             <div class="col-6">
-                <div class="info">Página {{ $products->currentPage() }} — Mostrando {{ $products->perPage() }} productos de {{ $products->total() }}</div>
+                <div class="info">Página {{ $categories->currentPage() }} — Mostrando {{ $categories->perPage() }} productos de {{ $categories->total() }}</div>
                 <!-- /.info -->
             </div>
             <!-- /.col-6 -->
             <div class="col-6">
-                {{ $products->links() }}
+                {{ $categories->links() }}
             </div>
             <!-- /.col-6 -->
         </div>
@@ -88,4 +73,4 @@
     </div>
     <!-- /#pagination -->
 </section>
-<!-- /#dashboard-products -->
+<!-- /#dashboard-categories -->

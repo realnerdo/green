@@ -13,7 +13,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $page = 'orders';
-        return view('dashboard', compact('page'));
+        $view = 'orders';
+        return view('dashboard', compact('view'));
     }
 }

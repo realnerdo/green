@@ -12,7 +12,7 @@
                 <!-- /.col-2 -->
                 <div class="col-10">
                     <section id="main">
-                        @include('dashboard.'.$page)
+                        @include('dashboard.'.$view)
                     </section>
                     <!-- /#dashboard-content -->
                 </div>

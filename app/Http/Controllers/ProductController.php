@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Http\Requests\ProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 use App\Product;
 use App\Category;
 use App\Media;
@@ -20,9 +21,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::latest()->paginate(5, ['*'], 'published_page');
-        $page = 'products';
-        return view('dashboard', compact('page', 'products'));
+        $products = Product::latest()->paginate(5);
+        $view = 'products';
+        return view('dashboard', compact('view', 'products'));
     }
 
     /**
@@ -46,8 +47,8 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::pluck('title', 'id');
-        $page = 'products.create';
-        return view('dashboard', compact('page', 'categories'));
+        $view = 'products.create';
+        return view('dashboard', compact('view', 'categories'));
     }
 
     /**
@@ -84,8 +85,8 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $categories = Category::pluck('title', 'id');
-        $page = 'products.edit';
-        return view('dashboard', compact('page', 'product', 'categories'));
+        $view = 'products.edit';
+        return view('dashboard', compact('view', 'product', 'categories'));
     }
     /**
      * Update the specified resource in storage.

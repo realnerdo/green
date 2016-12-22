@@ -34,6 +34,16 @@ class Category extends Model
     ];
 
     /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    /**
      * Get the products associated to the category
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */

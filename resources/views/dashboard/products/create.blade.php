@@ -4,6 +4,6 @@
 
 @section('dashboard-content')
     {{ Form::model($product = new \App\Product, ['url' => 'dashboard/productos', 'files' => true, 'class' => 'create_form form']) }}
-        @include('dashboard.products.form', ['submit' => 'Guardar'])
+        @include('dashboard.products.form', ['submit' => 'Publicar'])
     {{ Form::close() }}
 @endsection

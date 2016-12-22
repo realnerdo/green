@@ -18,6 +18,14 @@
             </li>
             <!-- /.item -->
             <li class="item">
+                <a href="{{ url('dashboard/categorias') }}" class="link">Categorías</a>
+            </li>
+            <!-- /.item -->
+            <li class="item">
+                <a href="{{ url('dashboard/paginas') }}" class="link">Páginas</a>
+            </li>
+            <!-- /.item -->
+            <li class="item">
                 {{ Form::open(['url' => '/logout']) }}
                     <button type="submig" class="link">Cerrar sesión</button>
                 {{ Form::close() }}

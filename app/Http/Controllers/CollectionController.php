@@ -13,8 +13,8 @@ class CollectionController extends Controller
      */
     public function index()
     {
-        $page = 'collections';
-        return view('dashboard', compact('page'));
+        $view = 'collections';
+        return view('dashboard', compact('view'));
     }
 
     /**

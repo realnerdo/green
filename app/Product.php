@@ -3,13 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Cviebrock\EloquentSluggable\Sluggable;
 use App\User;
 use App\Variation;
 use App\Category;
 use App\Media;
-use App\Http\Requests\ProductRequest;
-use Cviebrock\EloquentSluggable\Sluggable;
 
 class Product extends Model
 {
