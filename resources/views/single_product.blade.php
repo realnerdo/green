@@ -115,9 +115,12 @@
                                     </div>
                                     <!-- /.col-6 -->
                                     <div class="col-12">
-                                        {{-- <button class="add-to-cart-btn btn btn-green" type="submit">Añadir al carrito</button>
-                                        <button class="add-to-collection-btn btn btn-orange" type="button">Añadir a colección</button> --}}
-                                        <a href="{{ url('carrito') }}" class="add-to-cart-btn btn btn-green">Añadir al carrito</a>
+                                        {{ Form::open(['url' => 'carrito/agregar']) }}
+                                            <button class="add-to-cart-btn btn btn-green" type="submit">Añadir al carrito</button>
+                                            {{ Form::hidden('quantity', 1, ['id' => 'qty-input']) }}
+                                            {{ Form::hidden('product_id', $single->id, ['id' => 'product-input']) }}
+                                        {{ Form::close() }}
+                                        {{-- <button class="add-to-collection-btn btn btn-orange" type="button">Añadir a colección</button> --}}
                                         <a href="{{ url('coleccion') }}" class="add-to-collection-btn btn btn-orange">Añadir a colección</a>
                                     </div>
                                     <!-- /.col-6 -->
