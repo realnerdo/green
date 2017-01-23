@@ -15,23 +15,18 @@ class CreateQuantitiesTable extends Migration
     {
         Schema::create('quantities', function(Blueprint $table) {
             $table->increments('id');
-            $table->integer('product_id')->unsigned();
             $table->integer('quantity')->unsigned();
+            $table->integer('product_id')->unsigned();
+            $table->integer('cart_id')->unsigned();
             $table->timestamps();
-        });
 
-        Schema::create('cart_quantity', function(Blueprint $table) {
-            $table->integer('cart_id')->unsigned()->index();
+            $table->foreign('product_id')
+                    ->references('id')
+                    ->on('products');
+
             $table->foreign('cart_id')
                     ->references('id')
                     ->on('carts');
-
-            $table->integer('quantity_id')->unsigned()->index();
-            $table->foreign('quantity_id')
-                    ->references('id')
-                    ->on('quantities');
-
-            $table->timestamps();
         });
     }
 
@@ -42,12 +37,11 @@ class CreateQuantitiesTable extends Migration
      */
     public function down()
     {
-        Schema::table('cart_quantity', function(Blueprint $table) {
+        Schema::table('quantities', function(Blueprint $table) {
+            $table->dropForeign(['product_id']);
             $table->dropForeign(['cart_id']);
-            $table->dropForeign(['quantity_id']);
         });
 
-        Schema::drop('cart_quantity');
         Schema::drop('quantities');
     }
 }

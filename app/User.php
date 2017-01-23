@@ -5,10 +5,11 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-use App\Profile;
-use App\Product;
+use App\Cart;
 use App\Collection;
 use App\Media;
+use App\Product;
+use App\Profile;
 
 class User extends Authenticatable
 {
@@ -29,7 +30,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token'
     ];
 
     /**
@@ -66,5 +67,14 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Media')
                 ->withTimestamps();
+    }
+
+    /**
+     * A user can have one cart
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function cart()
+    {
+        return $this->hasOne('App\Cart');
     }
 }

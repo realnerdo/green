@@ -8,6 +8,7 @@ use App\User;
 use App\Variation;
 use App\Category;
 use App\Media;
+use App\Quantity;
 
 class Product extends Model
 {
@@ -82,5 +83,14 @@ class Product extends Model
     {
         return $this->belongsToMany('App\Media')
                 ->withTimestamps();
+    }
+
+    /**
+     * A product has many quantities
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function quantities()
+    {
+        return $this->hasMany('App\Quantity');
     }
 }
