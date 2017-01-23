@@ -3,8 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
 use App\User;
+use App\City;
 
 class Profile extends Model
 {
@@ -20,7 +20,8 @@ class Profile extends Model
         'zipcode',
         'rfc',
         'clabe',
-        'company'
+        'company',
+        'city_id'
     ];
 
     /**
@@ -29,5 +30,13 @@ class Profile extends Model
      */
     public function user() {
         return $this->belongsTo('App\User');
+    }
+
+    /**
+     * Get the city associated to the profile
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function city() {
+        return $this->belongsTo('App\City');
     }
 }

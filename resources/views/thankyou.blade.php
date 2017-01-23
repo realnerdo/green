@@ -2,7 +2,7 @@
 
 @section('title', 'Green - Gracias')
 
-@section('content')
+@section('front')
     <section id="thankyou">
         <div class="wrapper">
             <div class="row">

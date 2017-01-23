@@ -40,14 +40,14 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
     Route::delete('productos/{product}', 'ProductController@destroy');
 
     Route::get('categorias', 'CategoryController@index');
-    Route::get('categorias/nueva', 'CategoryController@create');
+    Route::get('categorias/nuevo', 'CategoryController@create');
     Route::post('categorias', 'CategoryController@store');
     Route::get('categorias/{category}/editar', 'CategoryController@edit');
     Route::patch('categorias/{category}', 'CategoryController@update');
     Route::delete('categorias/{category}', 'CategoryController@destroy');
 
     Route::get('paginas', 'PageController@index');
-    Route::get('paginas/nueva', 'PageController@create');
+    Route::get('paginas/nuevo', 'PageController@create');
     Route::post('paginas', 'PageController@store');
     Route::get('paginas/{page}/editar', 'PageController@edit');
     Route::patch('paginas/{page}', 'PageController@update');

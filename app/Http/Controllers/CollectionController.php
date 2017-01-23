@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Collection;
 
 class CollectionController extends Controller
 {
@@ -13,8 +14,8 @@ class CollectionController extends Controller
      */
     public function index()
     {
-        $view = 'collections';
-        return view('dashboard', compact('view'));
+        $collections = Collection::latest()->paginate(5);
+        return view('dashboard.collections.index', compact('collections'));
     }
 
     /**

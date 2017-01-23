@@ -1,6 +1,6 @@
 @extends('layout.base')
 
-@section('content')
+@section('front')
     @include('home.slider')
     @include('home.products')
     @include('home.newsletter')

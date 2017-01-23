@@ -13,7 +13,13 @@
             @include('layout.menu')
         @show
 
-        @yield('content')
+        @if(Auth::check())
+            @yield('dashboard')
+        @else
+            @yield('auth')
+        @endif
+
+        @yield('front')
 
         @section('footer')
             @include('layout.footer')
@@ -22,7 +28,7 @@
         {{ Html::script('js/app.js') }}
         @if ( Config::get('app.debug') )
           <script type="text/javascript">
-            document.write('<script src="//green.dev:35729/livereload.js?snipver=1" type="text/javascript"><\/script>')
+            document.write('<script src="//ventasverdes.dev:35729/livereload.js?snipver=1" type="text/javascript"><\/script>')
           </script>
         @endif
     </body>

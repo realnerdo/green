@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
+@import 'https://fonts.googleapis.com/css?family=Varela+Round';
 @font-face {
   font-family: 'Gumption';
   font-style: normal;
@@ -87,7 +87,7 @@ html {
 
 body {
   background: url("../img/bg.jpg") repeat;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Varela Round", sans-serif;
 }
 
 img {
@@ -107,7 +107,7 @@ img {
   border: 0;
   border-radius: 0.2142857143rem;
   display: inline-block;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Varela Round", sans-serif;
   padding: .7rem 1rem;
   text-align: center;
   text-decoration: none;
@@ -149,6 +149,14 @@ img {
   transform: translateY(-50%);
 }
 
+#top #main-logo .link {
+  display: inline-block;
+}
+
+#top #main-logo .link .img {
+  width: 12.8571428571rem;
+}
+
 #top #search {
   display: inline-block;
 }
@@ -171,7 +179,7 @@ img {
   appearance: none;
   border: 0;
   border-bottom: 2px solid #1abc9c;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Varela Round", sans-serif;
   outline: none;
   padding: .8rem 1rem;
   width: 15rem;
@@ -189,7 +197,7 @@ img {
   border-bottom: 2px solid #f39c12;
   border-radius: 0;
   color: #f39c12;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Varela Round", sans-serif;
   outline: none;
   padding: .8rem 3rem .8rem 1rem;
   position: relative;
@@ -377,7 +385,7 @@ img {
   border: 1px solid #ecf0f1;
   border-radius: 0.1428571429rem;
   color: #58828b;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Varela Round", sans-serif;
   padding: 1rem 1.2rem;
   width: 100%;
 }
@@ -393,7 +401,7 @@ img {
   border: 1px solid #ecf0f1;
   border-radius: 0.1428571429rem;
   color: #58828b;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Varela Round", sans-serif;
   outline: none;
   padding: 1rem 1.2rem;
   width: 100%;
@@ -505,10 +513,12 @@ img {
 
 #slider .glide {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background: none;
 }
 
 #slider .glide .glide__wrapper .glide__track .glide__slide {
   background: #406661;
+  border-radius: 0.2142857143rem;
   position: relative;
 }
 
@@ -516,7 +526,6 @@ img {
   visibility: visible;
   filter: alpha(opacity=50);
   opacity: 0.5;
-  border-radius: 0.1428571429rem;
   width: 100%;
 }
 
@@ -599,7 +608,7 @@ img {
   background: none;
   border: 0;
   color: #1abc9c;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Varela Round", sans-serif;
   text-decoration: none;
 }
 
@@ -796,7 +805,7 @@ img {
   background: none;
   border: 0;
   color: #1abc9c;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Varela Round", sans-serif;
 }
 
 #single-product .single .information .add-to-cart .quantity .qty {
@@ -808,7 +817,7 @@ img {
   background: #fff;
   border: 1px solid #ecf0f1;
   color: #1abc9c;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Varela Round", sans-serif;
   padding: .8rem 1rem;
   text-align: center;
 }
@@ -897,7 +906,7 @@ img {
   background: none;
   border: 0;
   color: #58828b;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Varela Round", sans-serif;
   padding: .7rem .8rem;
   width: 28.5714285714rem;
 }
@@ -1060,7 +1069,7 @@ img {
   border: 1px solid #ecf0f1;
   border-radius: 0.1428571429rem;
   color: #58828b;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Varela Round", sans-serif;
   padding: 1rem 1.2rem;
   width: 7.1428571429rem;
 }
@@ -1339,7 +1348,7 @@ img {
   background: none;
   border: 0;
   color: #58828b;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Varela Round", sans-serif;
   padding: .7rem .8rem;
   width: 14.2857142857rem;
 }

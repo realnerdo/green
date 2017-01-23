@@ -18,6 +18,10 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->text('description');
+            $table->string('sku');
+            $table->float('regular_price');
+            $table->float('sale_price')->nullable();
+            $table->integer('stock');
             $table->integer('user_id')->unsigned();
             $table->timestamps();
 

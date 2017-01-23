@@ -2,7 +2,7 @@
 
 @section('title', 'Green - Single')
 
-@section('content')
+@section('front')
     <section id="single-product">
         <div class="wrapper">
             <header class="header">
@@ -11,7 +11,7 @@
                         <div class="breadcrumbs">
                             <a href="{{ url('/') }}" class="link">Volver al listado</a> |
                             <a href="{{ url('categoria/'.$single->categories->first()->slug) }}" class="link">{{ $single->categories->first()->title }}</a> -
-                            <span class="current">{{ $single->variations->first()->title }}</span>
+                            <span class="current">{{ $single->title }}</span>
                         </div>
                         <!-- /.breadcrumbs -->
                     </div>
@@ -32,7 +32,7 @@
                     <div class="col-6 no-padding">
                         <div class="col-10">
                             <div class="gallery">
-                                <img src="{{ $single->medias->first()->url }}" alt="{{ $single->variations->first()->title }}" class="featured">
+                                <img src="{{ $single->medias->first()->url }}" alt="{{ $single->title }}" class="featured">
                             </div>
                             <!-- /.gallery -->
                         </div>
@@ -63,14 +63,14 @@
 
                     <div class="col-6">
                         <div class="information">
-                            <h1 class="title">{{ $single->variations->first()->title }}</h1>
+                            <h1 class="title">{{ $single->title }}</h1>
                             <!-- /.title -->
                             <h2 class="subtitle">
                                 Quedan 7 días · Ubicado en Monterrey, NL · 16 vendidos · 6 opiniones
                             </h2>
                             <!-- /.subtitle -->
                             <div class="description">
-                                {{ $single->variations->first()->description }}
+                                {{ $single->description }}
                             </div>
                             <!-- /.description -->
                             {{-- <div class="variations">

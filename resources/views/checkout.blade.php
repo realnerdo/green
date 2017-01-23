@@ -1,8 +1,8 @@
 @extends('layout.base')
 
-@section('title', 'Green - Pago')
+@section('title', 'Ventas Verdes - Pago')
 
-@section('content')
+@section('front')
     <section id="checkout">
         <div class="wrapper">
             <div class="row">

@@ -3,14 +3,15 @@
 #slider
     .glide
         box-shadow: 0 4px 8px 0 rgba($black, .2)
+        background: none
         .glide__wrapper
             .glide__track
                 .glide__slide
                     background: $slider
+                    border-radius: rem(3px)
                     position: relative
                     .img
                         +opacity(0.5)
-                        border-radius: rem(2px)
                         width: 100%
                     .content
                         left: 50%
@@ -22,7 +23,7 @@
                         .headline
                             +font-size(44px)
                             color: $white
-                            font-family: $gumption
+                            font-family: $serif
                             margin-bottom: 2rem
                         .cta
                             +font-size(20px)

@@ -17,8 +17,7 @@ class PageController extends Controller
     public function index()
     {
         $pages = Page::latest()->paginate(5);
-        $view = 'pages';
-        return view('dashboard', compact('view', 'pages'));
+        return view('dashboard.pages.index', compact('pages'));
     }
 
     /**
@@ -39,8 +38,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        $view = 'pages.create';
-        return view('dashboard', compact('view'));
+        return view('dashboard.pages.create');
     }
 
     /**
@@ -52,7 +50,7 @@ class PageController extends Controller
     {
         $page = Page::create($request->all());
 
-        session()->flash('flash_message', 'Se ha publicado la página');
+        session()->flash('flash_message', 'Se ha publicado la página: '.$page->title);
 
         return redirect('dashboard/paginas');
     }
@@ -65,8 +63,7 @@ class PageController extends Controller
      */
     public function edit(Page $page)
     {
-        $view = 'pages.edit';
-        return view('dashboard', compact('view', 'page'));
+        return view('dashboard.pages.edit', compact('page'));
     }
 
     /**
@@ -80,7 +77,7 @@ class PageController extends Controller
     {
         $page->update($request->all());
 
-        session()->flash('flash_message', 'Se ha actualizado la página');
+        session()->flash('flash_message', 'Se ha actualizado la página: '.$page->title);
 
         return redirect('dashboard/paginas');
     }

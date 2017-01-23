@@ -5,7 +5,6 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use App\User;
-use App\Variation;
 use App\Category;
 use App\Media;
 use App\Quantity;
@@ -43,26 +42,16 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'slug', 'description'
+        'title', 'slug', 'description', 'sku', 'regular_price', 'sale_price', 'stock', 'user_id' // Remove user_id
     ];
 
     /**
      * Get the seller(user) associated to the product
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function seller()
+    public function user()
     {
         return $this->belongsTo('App\User');
-    }
-
-    /**
-     * Get the variations associated to the product
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-    public function variations()
-    {
-        return $this->belongsToMany('App\Variation')
-                ->withTimestamps();
     }
 
     /**

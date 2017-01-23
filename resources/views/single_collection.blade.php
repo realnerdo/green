@@ -2,7 +2,7 @@
 
 @section('title', 'Green - Collection')
 
-@section('content')
+@section('front')
     <section id="single-collection">
 
         <div class="cover">

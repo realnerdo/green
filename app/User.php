@@ -10,6 +10,7 @@ use App\Collection;
 use App\Media;
 use App\Product;
 use App\Profile;
+use App\Address;
 
 class User extends Authenticatable
 {
@@ -21,7 +22,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'role'
+        'username', 'email', 'password', 'role'
     ];
 
     /**
@@ -39,6 +40,14 @@ class User extends Authenticatable
      */
     public function profile() {
         return $this->hasOne('App\Profile');
+    }
+
+    /**
+     * Get the addresses associated to the user
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function addresses() {
+        return $this->hasMany('App\Address');
     }
 
     /**
