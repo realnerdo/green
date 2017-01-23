@@ -26,7 +26,8 @@ class ProductRequest extends FormRequest
         return [
             'title' => 'required',
             'description' => 'required',
-            'photo' => 'required',
+            'stock' => 'required',
+            'photos' => 'required',
             'regular_price' => 'required',
             'category_list' => 'required'
         ];
@@ -42,8 +43,9 @@ class ProductRequest extends FormRequest
         return [
             'title.required' => 'No le has puesto título a tu producto',
             'description.required' => 'No le has puesto una descripción a tu producto',
+            'stock.required' => 'No le has puesto una cantidad a tu producto',
             'regular_price.required' => 'No le has puesto un precio a tu producto',
-            'photo.required' => 'No le has puesto una foto a tu producto',
+            'photos.required' => 'No le has puesto una foto a tu producto',
             'category_list.required' => 'No has seleccionado una categoría para tu producto'
         ];
     }

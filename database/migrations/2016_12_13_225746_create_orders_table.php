@@ -18,21 +18,20 @@ class CreateOrdersTable extends Migration
             $table->string('tracking_number');
             $table->string('tracking_url');
             $table->string('label_url');
+            $table->date('delivery_date');
+            $table->enum('payment_method', ['visa', 'mastercard', 'americanexpress', 'oxxo', 'banorte']);
+            $table->enum('status', ['pending', 'confirmed', 'transit', 'delivered']);
+            $table->integer('address_id')->unsigned();
+            $table->integer('cart_id')->unsigned();
             $table->timestamps();
-        });
 
-        Schema::create('order_product', function(Blueprint $table) {
-            $table->integer('order_id')->unsigned()->index();
-            $table->foreign('order_id')
+            $table->foreign('address_id')
                     ->references('id')
-                    ->on('orders');
+                    ->on('addresses');
 
-            $table->integer('product_id')->unsigned()->index();
-            $table->foreign('product_id')
+            $table->foreign('cart_id')
                     ->references('id')
-                    ->on('products');
-
-            $table->timestamps();
+                    ->on('carts');
         });
     }
 
@@ -43,12 +42,11 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::table('order_product', function(Blueprint $table) {
-            $table->dropForeign(['order_id']);
-            $table->dropForeign(['product_id']);
+        Schema::table('orders', function(Blueprint $table) {
+            $table->dropForeign(['address_id']);
+            $table->dropForeign(['cart_id']);
         });
 
-        Schema::drop('order_product');
         Schema::drop('orders');
     }
 }

@@ -22,3 +22,23 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Media::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->sentence(6),
+        'original_name' => $faker->sentence(6),
+        'url' => "http://loremflickr.com/270/400/plant?random=".$faker->numberBetween(1,50),
+        'type' => 'image'
+    ];
+});
+
+$factory->define(App\Product::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->sentence(6),
+        'description' => $faker->text(150),
+        'sku' => str_random(5),
+        'regular_price' => $faker->randomFloat(2, 10, 400),
+        'sale_price' => $faker->randomFloat(2, 9, 380),
+        'stock' => $faker->numberBetween(10, 100)
+    ];
+});

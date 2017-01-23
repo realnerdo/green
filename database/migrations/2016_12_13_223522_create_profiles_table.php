@@ -24,11 +24,16 @@ class CreateProfilesTable extends Migration
             $table->string('clabe');
             $table->string('company');
             $table->integer('city_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
 
             $table->foreign('city_id')
                     ->references('id')
                     ->on('cities');
+
+            $table->foreign('user_id')
+                    ->references('id')
+                    ->on('users');
         });
     }
 
@@ -41,6 +46,7 @@ class CreateProfilesTable extends Migration
     {
         Schema::table('profiles', function(Blueprint $table) {
             $table->dropForeign(['city_id']);
+            $table->dropForeign(['user_id']);
         });
 
         Schema::drop('profiles');

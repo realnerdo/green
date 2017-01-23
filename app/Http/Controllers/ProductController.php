@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;
 use App\Http\Requests\ProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Product;
 use App\Category;
 use App\Media;
 use Intervention\Image\ImageManagerStatic as Image;
-use Storage;
+use Auth;
 
 class ProductController extends Controller
 {
@@ -22,8 +21,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::latest()->paginate(5);
-        $view = 'products';
-        return view('dashboard', compact('view', 'products'));
+        return view('dashboard.products.index', compact('products'));
     }
 
     /**
@@ -47,8 +45,7 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::pluck('title', 'id');
-        $view = 'products.create';
-        return view('dashboard', compact('view', 'categories'));
+        return view('dashboard.products.create', compact('categories'));
     }
 
     /**
@@ -59,19 +56,13 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
         $product = Auth::user()->products()->create($request->all());
-        $variation = $product->variations()->create([
-            'title' => $product->title,
-            'description' => $product->description
-        ]);
 
         $this->syncCats($product, $request->input('category_list'));
 
-        $variation->meta()->create($request->all());
+        if($request->hasFile('photos'))
+            $this->uploadFile($product, $request->file('photos'));
 
-        if($request->hasFile('photo'))
-            $this->uploadFile($product, $request->file('photo'));
-
-        session()->flash('flash_message', 'Se ha publicado tu producto');
+        session()->flash('flash_message', 'Se ha publicado el producto: '.$product->title);
 
         return redirect('dashboard/productos');
     }
@@ -85,8 +76,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $categories = Category::pluck('title', 'id');
-        $view = 'products.edit';
-        return view('dashboard', compact('view', 'product', 'categories'));
+        return view('dashboard', compact('product', 'categories'));
     }
     /**
      * Update the specified resource in storage.
@@ -99,14 +89,12 @@ class ProductController extends Controller
     {
         $product->update($request->all());
 
-        //variation
-
         $this->syncCats($product, $request->input('category_list'));
 
-        if($request->hasFile('photo'))
-            $this->uploadFile($product, $request->file('photo'));
+        if($request->hasFile('photos'))
+            $this->uploadFile($product, $request->file('photos'));
 
-        session()->flash('flash_message', 'Se ha actualizado tu producto');
+        session()->flash('flash_message', 'Se ha actualizado el producto: '.$product->title);
 
         return redirect('dashboard/productos');
     }
@@ -149,49 +137,19 @@ class ProductController extends Controller
      * Upload File with Request
      *
      * @param  Product $product
-     * @param  \Illuminate\Http\Request::file() $file
+     * @param  \Illuminate\Http\Request::file() $files
      */
-    private function uploadFile($product, $file)
+    private function uploadFile($product, $files)
     {
-        $uploadedFile = $this->s3Upload($file, 'products');
-        $media = Media::create([
-            'title' => $uploadedFile['file_name'],
-            'url' => $uploadedFile['public_url'],
-            'original_name' => $uploadedFile['original_name'],
-            'type' => 'image'
-        ]);
-        $product->medias()->sync([$media->id]);
-    }
-
-    /**
-     * Upload file to Amazon s3
-     *
-     * @param  UploadedFile $file
-     * @param  String $subdirectory
-     * @return Array $uploadedFile
-     */
-    private function s3Upload($file, $subdirectory)
-    {
-        $client_original_name = $file->getClientOriginalName();
-        $fileName = time() . '_' . $client_original_name;
-        $destinationPath = 'uploads/' . $subdirectory;
-        $path = $destinationPath . '/' . $fileName;
-        $image = Image::make($file->getRealPath());
-        $image->resize(600, null, function ($constraint) {
-            $constraint->aspectRatio();
-            $constraint->upsize();
-        });
-        $stream = $image->stream();
-        $s3 = Storage::disk('s3');
-        $s3->put($path, $stream->__toString(), 'public');
-        $client = $s3->getDriver()->getAdapter()->getClient();
-        $public_url = $client->getObjectUrl(env('S3_BUCKET'), $path);
-        $original_name = pathinfo($client_original_name, PATHINFO_FILENAME);
-        $uploadedFile = [
-            'original_name' => $original_name,
-            'file_name' => $fileName,
-            'public_url' => $public_url
-        ];
-        return $uploadedFile;
+        foreach ($files as $file) {
+            $url = $file->store('public/products');
+            $media = Media::create([
+                'title' => $file->getClientOriginalName(),
+                'url' => str_replace('public/', '', $url),
+                'original_name' => $file->getClientOriginalName(),
+                'type' => 'image'
+            ]);
+            $product->medias()->sync([$media->id]);
+        }
     }
 }

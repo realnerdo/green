@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Order;
 
 class OrderController extends Controller
 {
@@ -13,7 +14,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $view = 'orders';
-        return view('dashboard', compact('view'));
+        $orders = Order::latest()->paginate(5);
+        return view('dashboard.orders.index', compact('orders'));
     }
 }

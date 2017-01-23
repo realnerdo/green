@@ -9,14 +9,14 @@
         </div>
         <!-- /.row -->
         <div class="row">
-            @if (!$products->isEmpty())
+            @unless ($products->isEmpty())
                 @foreach ($products as $product)
                     <div class="col-3">
                         @include('layout.product')
                     </div>
                     <!-- /.col-3 -->
                 @endforeach
-            @endif
+            @endunless
         </div>
         <!-- /.row -->
     </div>

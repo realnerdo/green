@@ -10,10 +10,16 @@ use App\Country;
 class State extends Model
 {
     /**
+     * Disable timestamps
+     * @var boolean
+     */
+    public $timestamps = false;
+
+    /**
      * A State has many cities
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function states() {
+    public function cities() {
         return $this->hasMany('App\City');
     }
 

@@ -2,7 +2,7 @@
 
 @section('title', 'Green - Store')
 
-@section('content')
+@section('front')
     <section id="search">
         <div class="wrapper">
             <div class="row">

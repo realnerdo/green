@@ -2,7 +2,7 @@
 
 @section('title', 'Green - '.$page->title)
 
-@section('content')
+@section('front')
     <section id="page">
         <div class="wrapper">
             <div class="row">

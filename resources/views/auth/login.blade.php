@@ -1,6 +1,6 @@
 @extends('layout.base')
 
-@section('content')
+@section('auth')
 <section id="login" class="section-auth">
     <div class="wrapper">
         <div class="row">

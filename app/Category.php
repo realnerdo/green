@@ -30,7 +30,7 @@ class Category extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'slug', 'description'
+        'title', 'description'
     ];
 
     /**
@@ -49,7 +49,7 @@ class Category extends Model
      */
     public function products()
     {
-        return $this->belongsToMany('App\Variation')
+        return $this->belongsToMany('App\Product')
                 ->withTimestamps();
     }
 }

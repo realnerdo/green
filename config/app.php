@@ -167,7 +167,9 @@ return [
          * Package Service Providers...
          */
 
-        //
+        Intervention\Image\ImageServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -177,21 +179,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
-        /*
-         * Laravel Collective
-         */
-        Collective\Html\HtmlServiceProvider::class,
-
-        /*
-         * Intervention Image
-         */
-        Intervention\Image\ImageServiceProvider::class,
-
-        /*
-         * Eloquent Sluggable
-         */
-        Cviebrock\EloquentSluggable\ServiceProvider::class,
 
     ],
 
@@ -241,15 +228,11 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-        /*
-         * Laravel Collective
-         */
+        // Laravel Collective
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
 
-        /*
-         * Intervention Image
-         */
+        // Intervention Image
         'Image' => Intervention\Image\Facades\Image::class,
 
     ],

@@ -17,8 +17,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::latest()->paginate(5);
-        $view = 'categories';
-        return view('dashboard', compact('view', 'categories'));
+        return view('dashboard.categories.index', compact('categories'));
     }
 
     /**
@@ -41,8 +40,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $view = 'categories.create';
-        return view('dashboard', compact('view'));
+        return view('dashboard.categories.create');
     }
 
     /**
@@ -54,7 +52,7 @@ class CategoryController extends Controller
     {
         $category = Category::create($request->all());
 
-        session()->flash('flash_message', 'Se ha publicado la categoría');
+        session()->flash('flash_message', 'Se ha publicado la categoría: '.$category->title);
 
         return redirect('dashboard/categorias');
     }
@@ -67,8 +65,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        $view = 'categories.edit';
-        return view('dashboard', compact('view', 'category'));
+        return view('dashboard.categories.edit', compact('category'));
     }
 
     /**
@@ -82,7 +79,7 @@ class CategoryController extends Controller
     {
         $category->update($request->all());
 
-        session()->flash('flash_message', 'Se ha actualizado la categoría');
+        session()->flash('flash_message', 'Se ha actualizado la categoría: '.$category->title);
 
         return redirect('dashboard/categorias');
     }
