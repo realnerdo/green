@@ -140,11 +140,13 @@
         <!-- /.row -->
         <div class="bottom">
             <div class="row">
+                <div class="col-2"></div>
+                <!-- /.col-2 -->
                 <div class="col-6">
                     <span class="copyright">&copy; Copyright 2016 - Green. Todos los derechos reservados.</span>
                 </div>
                 <!-- /.col-6 -->
-                <div class="col-6">
+                <div class="col-4">
                     <div class="social pull-right">
                         <ul class="list">
                             <li class="item">
@@ -170,7 +172,7 @@
                     </div>
                     <!-- /.social -->
                 </div>
-                <!-- /.col-6 -->
+                <!-- /.col-4 -->
             </div>
             <!-- /.row -->
         </div>
