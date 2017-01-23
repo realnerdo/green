@@ -14,11 +14,11 @@ require('laravel-elixir-livereload');
 
 elixir((mix) => {
     mix.sass([
+        'app.sass',
         './node_modules/normalize.css/normalize.css',
         './node_modules/glidejs/dist/css/glide.core.min.css',
         './node_modules/glidejs/dist/css/glide.theme.min.css',
-        './node_modules/select2/dist/css/select2.min.css',
-        'app.sass'
+        './node_modules/select2/dist/css/select2.min.css'
     ], 'public/css/app.css');
 
     mix.scripts([
