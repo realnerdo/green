@@ -1,4 +1,8 @@
 $(function(){
+
+    var $body = $('body'),
+        $window = $(window);
+
     // Glide
     var slider = $('.glide');
     if(slider.length){
@@ -12,17 +16,21 @@ $(function(){
     var selects2 = $('.select2');
     if(selects2.length){
         selects2.select2({
-            width: '100%',
-            tags: false,
-            tokenSeparators: [","],
-            "language": {
-                "noResults": function(){
-                    return "Aún no hay opciones, escribe una...";
-                }
-            },
-            escapeMarkup: function (markup) {
-                return markup;
-            }
+            width: '100%'
+        });
+    }
+
+    // Dropdown
+    var dropdown = $('.dropdown');
+    if(dropdown){
+        $window.click(function() {
+            dropdown.find('.submenu').removeClass('open');
+        });
+        dropdown.click(function(e) {
+            if ($(e.target).hasClass('link'))
+                return true;
+            $(this).find('.submenu').toggleClass('open');
+            return false;
         });
     }
 });

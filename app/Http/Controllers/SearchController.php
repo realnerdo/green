@@ -21,7 +21,7 @@ class SearchController extends Controller
     public function search(Request $request)
     {
         $s = $request->input('search');
-        $products = Product::where([['title', 'LIKE', '%'.$s.'%']])->get();
+        $products = Product::where('title', 'LIKE', '%'.$s.'%')->get();
         return view('search', compact('products', 's'));
     }
 }

@@ -20,7 +20,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::latest()->paginate(5);
+        $products = Auth::user()->products()->paginate(5);
         return view('dashboard.products.index', compact('products'));
     }
 
@@ -76,7 +76,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $categories = Category::pluck('title', 'id');
-        return view('dashboard', compact('product', 'categories'));
+        return view('dashboard.products.edit', compact('product', 'categories'));
     }
     /**
      * Update the specified resource in storage.

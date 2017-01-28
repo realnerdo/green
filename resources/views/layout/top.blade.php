@@ -34,7 +34,7 @@
                                 <img src="{{ asset('img/cart.svg') }}" alt="" class="icon">
                             </a>
                         </li>
-                        <li class="item">
+                        <li class="item dropdown">
                             <a href="{{ url('dashboard') }}" class="profile">
                                 <div class="photo">
                                     <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg" alt="" class="img">
@@ -42,6 +42,19 @@
                                 <!-- /.photo -->
                                 <img src="{{ asset('img/caret-down.svg') }}" alt="" class="icon">
                             </a><!-- /profile -->
+                            <ul class="submenu">
+                                <li class="option">
+                                    <a href="{{ url('dashboard') }}" class="link">Dashboard</a>
+                                </li><!-- /.option -->
+                                <li class="option">
+                                    <a href="{{ url('dashboard/perfil') }}" class="link">Perfil</a>
+                                </li><!-- /.option -->
+                                <li class="option">
+                                    {{ Form::open(['url' => '/logout']) }}
+                                        <button type="submig" class="link">Cerrar sesión</button>
+                                    {{ Form::close() }}
+                                </li><!-- /.option -->
+                            </ul><!-- /.submenu -->
                         </li>
                     </ul><!-- /list -->
 

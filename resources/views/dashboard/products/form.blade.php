@@ -40,8 +40,8 @@
 </div>
 <!-- /.form-group -->
 <div class="form-group">
-    {{ Form::label('category', 'Categoría', ['class' => 'label']) }}
-    {{ Form::select('category_list[]', $categories, null, ['multiple', 'class' => 'select']) }}
+    {{ Form::label('category_list', 'Categoría', ['class' => 'label']) }}
+    {{ Form::select('category_list[]', $categories, null, ['multiple', 'class' => 'select2']) }}
 </div>
 <!-- /.form-group -->
 <div class="form-group">

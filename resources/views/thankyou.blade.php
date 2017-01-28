@@ -38,11 +38,11 @@
                                 @if (!$products->isEmpty())
                                     @foreach ($products as $product)
                                         <tr class="tr">
-                                            <td class="td"><span class="title">{{ $product->variations->first()->title }} (2)</span></td>
+                                            <td class="td"><span class="title">{{ $product->title }} (2)</span></td>
                                             <!-- /.td -->
-                                            <td class="td"><span class="price">${{ $product->variations->first()->meta->sale_price }}</span></td>
+                                            <td class="td"><span class="price">${{ $product->sale_price }}</span></td>
                                             <!-- /.td -->
-                                            <td class="td"><span class="price">${{ $product->variations->first()->meta->sale_price * 2 }}</span></td>
+                                            <td class="td"><span class="price">${{ $product->sale_price * 2 }}</span></td>
                                             <!-- /.td -->
                                         </tr>
                                         <!-- /.tr -->

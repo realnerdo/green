@@ -51,6 +51,7 @@
         .item
             float: left
             margin-right: 1rem
+            position: relative
             .icon
                 transform: translateY(50%)
             .profile
@@ -66,3 +67,36 @@
                         width: 100%
                 .icon
                     transform: translateY(-130%)
+            .submenu
+                +opacity(0)
+                top: 100%
+                box-shadow: 0 4px 8px 0 rgba($black, .15)
+                list-style: none
+                position: absolute
+                right: 0
+                z-index: 50
+                &.open
+                    +opacity(1)
+                &::before
+                    border-bottom: rem(5px) solid $white
+                    border-left: rem(5px) solid transparent
+                    border-right: rem(5px) solid transparent
+                    content: ''
+                    height: 0
+                    position: absolute
+                    right: rem(2px)
+                    top: rem(-5px)
+                    width: 0
+                .option
+                    .link
+                        background: $white
+                        border: 0
+                        color: $green
+                        display: block
+                        font: inherit
+                        padding: 1rem
+                        text-decoration: none
+                        white-space: nowrap
+                        &:hover
+                            background: $cloud
+                            cursor: pointer

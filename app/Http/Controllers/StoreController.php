@@ -25,7 +25,7 @@ class StoreController extends Controller
      */
     public function checkout()
     {
-        $products = Product::all();
+        $products = Product::latest()->take(3)->get();
         return view('checkout', compact('products'));
     }
     /**
@@ -35,7 +35,7 @@ class StoreController extends Controller
      */
     public function thankyou()
     {
-        $products = Product::all();
+        $products = Product::latest()->take(3)->get();
         return view('thankyou', compact('products'));
     }
 }

@@ -82,4 +82,14 @@ class Product extends Model
     {
         return $this->hasMany('App\Quantity');
     }
+
+    /**
+     * Get a list of the categories associated with the current product
+     *
+     * @return array
+     */
+    public function getCategoryListAttribute()
+    {
+        return $this->categories->pluck('id')->all();
+    }
 }

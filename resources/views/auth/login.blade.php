@@ -9,8 +9,8 @@
                 <!-- /.title -->
                 {{ Form::open(['url' => '/login', 'class' => 'login_form form']) }}
                     <div class="form-group">
-                        {{ Form::label('email', 'Correo electrónico', ['class' => 'label']) }}
-                        {{ Form::input('email', 'email', old('email'), ['required' => true, 'autofocus' => true, 'class' => 'input']) }}
+                        {{ Form::label('username', 'Nombre de usuario', ['class' => 'label']) }}
+                        {{ Form::input('text', 'username', old('username'), ['required' => true, 'autofocus' => true, 'class' => 'input']) }}
                     </div>
                     <!-- /.form-group -->
                     <div class="form-group">
