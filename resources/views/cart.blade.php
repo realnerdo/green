@@ -53,11 +53,11 @@
                                         </td>
                                         <!-- /.td -->
                                         <td class="td">
-                                            <span class="title">{{ $item->product->variations->first()->title }}</span>
+                                            <span class="title">{{ $item->product->title }}</span>
                                         </td>
                                         <!-- /.td -->
                                         <td class="td">
-                                            <span class="price">${{ $item->product->variations->first()->meta->sale_price }}</span>
+                                            <span class="price">${{ $item->product->sale_price }}</span>
                                         </td>
                                         <!-- /.td -->
                                         <td class="td">
@@ -68,7 +68,7 @@
                                         </td>
                                         <!-- /.td -->
                                         <td class="td">
-                                            <span class="price">${{ $item->quantity * $item->product->variations->first()->meta->sale_price }}</span>
+                                            <span class="price">${{ $item->quantity * $item->product->sale_price }}</span>
                                         </td>
                                         <!-- /.td -->
                                         <td class="td">

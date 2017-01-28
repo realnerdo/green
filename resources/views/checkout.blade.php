@@ -98,17 +98,17 @@
                             <!-- /.form-group -->
                             <div class="form-group">
                                 {{ Form::label('country', 'País', ['class' => 'label']) }}
-                                {{ Form::select('country', ['México', '2', '3'], null, ['class' => 'select']) }}
+                                {{ Form::select('country', ['México'], null, ['class' => 'select']) }}
                             </div>
                             <!-- /.form-group -->
                             <div class="form-group">
                                 {{ Form::label('state', 'Estado', ['class' => 'label']) }}
-                                {{ Form::select('state', ['Yucatán', '2', '3'], null, ['class' => 'select']) }}
+                                {{ Form::select('state', ['Yucatán'], null, ['class' => 'select']) }}
                             </div>
                             <!-- /.form-group -->
                             <div class="form-group">
                                 {{ Form::label('city', 'Ciudad', ['class' => 'label']) }}
-                                {{ Form::select('city', ['Mérida', '2', '3'], null, ['class' => 'select']) }}
+                                {{ Form::select('city', ['Mérida'], null, ['class' => 'select']) }}
                             </div>
                             <!-- /.form-group -->
                             <div class="form-group">
@@ -187,11 +187,11 @@
                                 @if (!$products->isEmpty())
                                     @foreach ($products as $product)
                                         <tr class="tr">
-                                            <td class="td"><span class="title">{{ $product->variations->first()->title }} (2)</span></td>
+                                            <td class="td"><span class="title">{{ $product->title }} (2)</span></td>
                                             <!-- /.td -->
-                                            <td class="td"><span class="price">${{ $product->variations->first()->meta->sale_price }}</span></td>
+                                            <td class="td"><span class="price">${{ $product->sale_price }}</span></td>
                                             <!-- /.td -->
-                                            <td class="td"><span class="price">${{ $product->variations->first()->meta->sale_price * 2 }}</span></td>
+                                            <td class="td"><span class="price">${{ $product->sale_price * 2 }}</span></td>
                                             <!-- /.td -->
                                         </tr>
                                         <!-- /.tr -->

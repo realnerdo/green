@@ -50,15 +50,15 @@
                                 </td>
                                 <!-- /.td -->
                                 <td class="td">
-                                    <span class="title"><a href="{{ url('producto/'.$product->variations->first()->slug) }}" class="link">{{ $product->title }}</a></span>
+                                    <span class="title"><a href="{{ url('producto/'.$product->slug) }}" class="link">{{ $product->title }}</a></span>
                                 </td>
                                 <!-- /.td -->
                                 <td class="td">
-                                    <span class="price">${{ $product->variations->first()->meta->sale_price }}</span>
+                                    <span class="price">${{ $product->sale_price }}</span>
                                 </td>
                                 <!-- /.td -->
                                 <td class="td">
-                                    <span class="stock">{{ $product->variations->first()->meta->stock }}</span>
+                                    <span class="stock">{{ $product->stock }}</span>
                                 </td>
                                 <!-- /.td -->
                                 <td class="td">

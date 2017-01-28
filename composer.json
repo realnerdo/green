@@ -11,7 +11,8 @@
         "intervention/image": "^2.3",
         "cviebrock/eloquent-sluggable": "^4.1",
         "league/flysystem-aws-s3-v3": "^1.0",
-        "guidocella/eloquent-populator": "^1"
+        "guidocella/eloquent-populator": "^1",
+        "filp/whoops": "^2.1"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",
