@@ -12,7 +12,7 @@ class Quantity extends Model
      * The attributes that are mass assignable.
      * @var array
      */
-    protected $fillable = ['quantity', 'product_id'];
+    protected $fillable = ['quantity', 'product_id', 'cart_id'];
 
     public function cart()
     {

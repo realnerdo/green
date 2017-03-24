@@ -9,6 +9,7 @@
     </head>
     <body>
         @section('header')
+            @include('layout.notifications')
             @include('layout.top')
             @include('layout.menu')
         @show
@@ -25,6 +26,7 @@
             @include('layout.footer')
         @show
 
+        <script type="text/javascript" src="https://conektaapi.s3.amazonaws.com/v0.3.2/js/conekta.js"></script>
         {{ Html::script('js/app.js') }}
         @if ( Config::get('app.debug') )
           <script type="text/javascript">

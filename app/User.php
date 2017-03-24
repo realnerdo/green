@@ -11,6 +11,7 @@ use App\Media;
 use App\Product;
 use App\Profile;
 use App\Address;
+use App\Box;
 
 class User extends Authenticatable
 {
@@ -85,5 +86,10 @@ class User extends Authenticatable
     public function cart()
     {
         return $this->hasOne('App\Cart');
+    }
+
+    public function boxes()
+    {
+        return $this->hasMany('App\Box');
     }
 }

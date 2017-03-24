@@ -15,16 +15,22 @@ Route::get('/', 'HomeController@index');
 Route::get('busqueda', 'SearchController@index');
 Route::post('busqueda', 'SearchController@search');
 
+Route::get('mienvio', 'StoreController@mienvio');
+
+// Products
 Route::get('producto/{product}', 'ProductController@show');
 Route::get('categoria/{category}', 'ProductController@show');
 Route::get('coleccion', 'CollectionController@show');
 
-Route::get('carrito', 'CartController@index');
-Route::post('carrito/agregar', 'CartController@store');
-Route::delete('carrito/{quantity}', 'CartController@destroyItem');
+// Store
+Route::get('carrito', 'StoreController@showCart');
+Route::patch('carrito/{cart}', 'StoreController@updateCart');
+Route::post('carrito/agregar', 'StoreController@storeCart');
+Route::delete('carrito/{quantity}', 'StoreController@destroyItem');
+Route::get('pago', 'StoreController@showCheckout');
+Route::post('pago/conekta', 'StoreController@conekta');
+Route::get('gracias', 'StoreController@showThankyou');
 
-Route::get('pago', 'StoreController@checkout');
-Route::get('gracias', 'StoreController@thankyou');
 Route::get('pagina/{page}', 'PageController@show');
 
 Auth::routes();

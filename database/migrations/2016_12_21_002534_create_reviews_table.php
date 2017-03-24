@@ -17,8 +17,13 @@ class CreateReviewsTable extends Migration
             $table->increments('id');
             $table->integer('rating');
             $table->text('review');
+            $table->integer('product_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('product_id')
+                    ->references('id')
+                    ->on('products');
 
             $table->foreign('user_id')
                     ->references('id')
@@ -34,6 +39,7 @@ class CreateReviewsTable extends Migration
     public function down()
     {
         Schema::table('reviews', function(Blueprint $table) {
+            $table->dropForeign(['product_id']);
             $table->dropForeign(['user_id']);
         });
 

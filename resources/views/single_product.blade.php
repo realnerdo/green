@@ -1,6 +1,6 @@
 @extends('layout.base')
 
-@section('title', 'Green - Single')
+@section('title', $single->title)
 
 @section('front')
     <section id="single-product">
@@ -40,18 +40,12 @@
                         <div class="col-2">
                             <div class="thumbnails">
                                 <ul class="list">
-                                    <li class="item">
-                                        <img src="{{ asset('img/thumbnail_1.jpg') }}" alt="" class="img">
-                                    </li>
-                                    <!-- /.item -->
-                                    <li class="item">
-                                        <img src="{{ asset('img/thumbnail_2.jpg') }}" alt="" class="img">
-                                    </li>
-                                    <!-- /.item -->
-                                    <li class="item">
-                                        <img src="{{ asset('img/thumbnail_3.jpg') }}" alt="" class="img">
-                                    </li>
-                                    <!-- /.item -->
+                                    @foreach($single->medias as $media)
+                                        <li class="item">
+                                            <img src="{{ $media->url }}" class="img">
+                                        </li>
+                                        <!-- /.item -->
+                                    @endforeach
                                 </ul>
                                 <!-- /.list -->
                             </div>
@@ -73,59 +67,29 @@
                                 {{ $single->description }}
                             </div>
                             <!-- /.description -->
-                            {{-- <div class="variations">
-                                <div class="row">
-                                    <div class="col-12 no-padding">
-                                        <div class="variation">
-                                            <h6 class="title">Material</h6>
-                                            <!-- /.title -->
-                                            <select name="variation" id="" class="select">
-                                                <option value="">Piedra</option>
-                                                <option value="">Madera</option>
-                                            </select>
-                                        </div>
-                                        <!-- /.variation -->
-                                        <div class="variation">
-                                            <h6 class="title">Color</h6>
-                                            <!-- /.title -->
-                                            <select name="variation" id="" class="select">
-                                                <option value="">Verde</option>
-                                                <option value="">Café</option>
-                                                <option value="">Amarillo</option>
-                                            </select>
-                                        </div>
-                                        <!-- /.variation -->
-                                    </div>
-                                    <!-- /.col-12 -->
-                                </div>
-                                <!-- /.row -->
-                            </div>
-                            <!-- /.variations --> --}}
                             <div class="add-to-cart">
-                                <div class="row">
-                                    <div class="col-12 no-padding">
-                                        <div class="quantity">
-                                            <h3 class="title">Cantidad</h3>
-                                            <!-- /.title -->
-                                            <button class="qty_less control">—</button>
-                                            <input type="number" class="qty" name="qty" min="0" max="100" value="1">
-                                            <button class="qty_more control">+</button>
+                                {{ Form::open(['url' => 'carrito/agregar']) }}
+                                    <div class="row">
+                                        <div class="col-12 no-padding">
+                                            <div class="quantity">
+                                                <h3 class="title">Cantidad</h3>
+                                                <!-- /.title -->
+                                                <button class="qty_less control">—</button>
+                                                <input type="number" class="qty" name="quantity" min="1" max="{{ $single->stock }}" value="1">
+                                                <button class="qty_more control">+</button>
+                                            </div>
+                                            <!-- /.quantity -->
                                         </div>
-                                        <!-- /.quantity -->
+                                        <!-- /.col-6 -->
+                                        <div class="col-12">
+                                                <button class="add-to-cart-btn btn btn-green" type="submit">Añadir al carrito</button>
+                                                {{ Form::hidden('product_id', $single->id, ['id' => 'product-input']) }}
+                                            <a href="{{ url('coleccion') }}" class="add-to-collection-btn btn btn-orange">Añadir a colección</a>
+                                        </div>
+                                        <!-- /.col-6 -->
                                     </div>
-                                    <!-- /.col-6 -->
-                                    <div class="col-12">
-                                        {{ Form::open(['url' => 'carrito/agregar']) }}
-                                            <button class="add-to-cart-btn btn btn-green" type="submit">Añadir al carrito</button>
-                                            {{ Form::hidden('quantity', 1, ['id' => 'qty-input']) }}
-                                            {{ Form::hidden('product_id', $single->id, ['id' => 'product-input']) }}
-                                        {{ Form::close() }}
-                                        {{-- <button class="add-to-collection-btn btn btn-orange" type="button">Añadir a colección</button> --}}
-                                        <a href="{{ url('coleccion') }}" class="add-to-collection-btn btn btn-orange">Añadir a colección</a>
-                                    </div>
-                                    <!-- /.col-6 -->
-                                </div>
-                                <!-- /.row -->
+                                    <!-- /.row -->
+                                {{ Form::close() }}
                             </div>
                             <!-- /.add-to-cart -->
                         </div>
@@ -142,76 +106,37 @@
                     <section class="reviews">
                         <h3 class="title">Opiniones de clientes</h3>
                         <!-- /.title -->
-                        @include('layout.stars')
-                        <article class="review">
-                            <header class="header">
-                                <div class="row">
-                                    <div class="rating">
-                                        @include('layout.stars_list')
-                                        <span>Satisfecho</span>
+                        @if ($single->reviews->isEmpty())
+                            <div class="empty">
+                                <h3 class="title">Aún no hay opiniones de este producto</h3><!-- /.title -->
+                            </div><!-- /.empty -->
+                        @else
+                            @include('layout.stars')
+                            @foreach ($single->reviews as $review)
+                                <article class="review">
+                                    <header class="header">
+                                        <div class="row">
+                                            <div class="rating">
+                                                @include('layout.stars_list', ['selected' => $review->rating])
+                                                {{-- <span>Satisfecho</span> --}}
+                                            </div>
+                                            <!-- /.rating -->
+                                        </div>
+                                        <!-- /.row -->
+                                        <div class="row">
+                                            <span class="author">Por <a href="#" class="link">{{ $review->user->name }}</a> el {{ $review->created_at }}</span>
+                                        </div>
+                                        <!-- /.row -->
+                                    </header>
+                                    <!-- /.header -->
+                                    <div class="content">
+                                        {{ $review->review }}
                                     </div>
-                                    <!-- /.rating -->
-                                </div>
-                                <!-- /.row -->
-                                <div class="row">
-                                    <span class="author">Por <a href="#" class="link">Asael</a> el 15 de Agosto del 2016</span> ·
-                                    <span class="variation">Material: Piedra | Color: Gris</span>
-                                </div>
-                                <!-- /.row -->
-                            </header>
-                            <!-- /.header -->
-                            <div class="content">
-                                <p>El articulo me llegó sin problemas y el diseño está muy bien. Se ve muy resistente y me gustó el material. Lo recomiendo mucho. Gracias.</p>
-                            </div>
-                            <!-- /.content -->
-                        </article>
-                        <!-- /.review -->
-                        <article class="review">
-                            <header class="header">
-                                <div class="row">
-                                    <div class="rating">
-                                        @include('layout.stars_list')
-                                        <span>Satisfecho</span>
-                                    </div>
-                                    <!-- /.rating -->
-                                </div>
-                                <!-- /.row -->
-                                <div class="row">
-                                    <span class="author">Por <a href="#" class="link">Asael</a> el 15 de Agosto del 2016</span> ·
-                                    <span class="variation">Material: Piedra | Color: Gris</span>
-                                </div>
-                                <!-- /.row -->
-                            </header>
-                            <!-- /.header -->
-                            <div class="content">
-                                <p>El articulo me llegó sin problemas y el diseño está muy bien. Se ve muy resistente y me gustó el material. Lo recomiendo mucho. Gracias.</p>
-                            </div>
-                            <!-- /.content -->
-                        </article>
-                        <!-- /.review -->
-                        <article class="review">
-                            <header class="header">
-                                <div class="row">
-                                    <div class="rating">
-                                        @include('layout.stars_list')
-                                        <span>Satisfecho</span>
-                                    </div>
-                                    <!-- /.rating -->
-                                </div>
-                                <!-- /.row -->
-                                <div class="row">
-                                    <span class="author">Por <a href="#" class="link">Asael</a> el 15 de Agosto del 2016</span> ·
-                                    <span class="variation">Material: Piedra | Color: Gris</span>
-                                </div>
-                                <!-- /.row -->
-                            </header>
-                            <!-- /.header -->
-                            <div class="content">
-                                <p>El articulo me llegó sin problemas y el diseño está muy bien. Se ve muy resistente y me gustó el material. Lo recomiendo mucho. Gracias.</p>
-                            </div>
-                            <!-- /.content -->
-                        </article>
-                        <!-- /.review -->
+                                    <!-- /.content -->
+                                </article>
+                                <!-- /.review -->
+                            @endforeach
+                        @endif
                     </section>
                     <!-- /.reviews -->
                 </div>

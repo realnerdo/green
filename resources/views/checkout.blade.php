@@ -15,155 +15,169 @@
             <!-- /.row -->
             <div class="row">
                 <div class="col-6">
-                    <div class="billing">
-                        <h2 class="title">Datos de facturación</h2>
-                        <!-- /.title -->
-                        {{ Form::open(['url' => '/', 'class' => 'billing_form form']) }}
-                            <div class="form-group">
-                                {{ Form::label('firstname', 'Nombre(s)', ['class' => 'label']) }}
-                                {{ Form::input('text', 'firstname', 'Asael', ['class' => 'input']) }}
-                            </div>
-                            <!-- /.form-group -->
-                            <div class="form-group">
-                                {{ Form::label('lastname', 'Apellido(s)', ['class' => 'label']) }}
-                                {{ Form::input('text', 'lastname', 'Chávez Jaimes', ['class' => 'input']) }}
-                            </div>
-                            <!-- /.form-group -->
-                            <div class="form-group">
-                                {{ Form::label('email', 'Correo electrónico', ['class' => 'label']) }}
-                                {{ Form::input('email', 'email', 'asaelx@gmail.com', ['class' => 'input']) }}
-                            </div>
-                            <!-- /.form-group -->
-                            <div class="form-group">
-                                {{ Form::label('phone', 'Teléfono', ['class' => 'label']) }}
-                                {{ Form::input('text', 'phone', '9993708552', ['class' => 'input']) }}
-                            </div>
-                            <!-- /.form-group -->
-                            <div class="form-group">
-                                {{ Form::label('address', 'Dirección', ['class' => 'label']) }}
-                                {{ Form::input('text', 'address', 'Calle 3C #284 Residencial Galerías', ['class' => 'input']) }}
-                            </div>
-                            <!-- /.form-group -->
-                            <div class="form-group">
-                                {{ Form::label('country', 'País', ['class' => 'label']) }}
-                                {{ Form::select('country', ['México', '2', '3'], null, ['class' => 'select']) }}
-                            </div>
-                            <!-- /.form-group -->
-                            <div class="form-group">
-                                {{ Form::label('state', 'Estado', ['class' => 'label']) }}
-                                {{ Form::select('state', ['Yucatán', '2', '3'], null, ['class' => 'select']) }}
-                            </div>
-                            <!-- /.form-group -->
-                            <div class="form-group">
-                                {{ Form::label('city', 'Ciudad', ['class' => 'label']) }}
-                                {{ Form::select('city', ['Mérida', '2', '3'], null, ['class' => 'select']) }}
-                            </div>
-                            <!-- /.form-group -->
-                            <div class="form-group">
-                                {{ Form::label('zipcode', 'Código Postal', ['class' => 'label']) }}
-                                {{ Form::input('text', 'zipcode', '97203', ['class' => 'input']) }}
-                            </div>
-                            <!-- /.form-group -->
-                        {{ Form::close() }}
-                    </div>
-                    <!-- /.billing -->
-                    <div class="shipping">
-                        <h2 class="title">Datos de envío</h2>
-                        <!-- /.title -->
-                        {{ Form::open(['url' => '/', 'class' => 'billing_form form']) }}
-                            <div class="form-group">
-                                {{ Form::label('firstname', 'Nombre(s)', ['class' => 'label']) }}
-                                {{ Form::input('text', 'firstname', 'Asael', ['class' => 'input']) }}
-                            </div>
-                            <!-- /.form-group -->
-                            <div class="form-group">
-                                {{ Form::label('lastname', 'Apellido(s)', ['class' => 'label']) }}
-                                {{ Form::input('text', 'lastname', 'Chávez Jaimes', ['class' => 'input']) }}
-                            </div>
-                            <!-- /.form-group -->
-                            <div class="form-group">
-                                {{ Form::label('email', 'Correo electrónico', ['class' => 'label']) }}
-                                {{ Form::input('email', 'email', 'asaelx@gmail.com', ['class' => 'input']) }}
-                            </div>
-                            <!-- /.form-group -->
-                            <div class="form-group">
-                                {{ Form::label('phone', 'Teléfono', ['class' => 'label']) }}
-                                {{ Form::input('text', 'phone', '9993708552', ['class' => 'input']) }}
-                            </div>
-                            <!-- /.form-group -->
-                            <div class="form-group">
-                                {{ Form::label('address', 'Dirección', ['class' => 'label']) }}
-                                {{ Form::input('text', 'address', 'Calle 3C #284 Residencial Galerías', ['class' => 'input']) }}
-                            </div>
-                            <!-- /.form-group -->
-                            <div class="form-group">
-                                {{ Form::label('country', 'País', ['class' => 'label']) }}
-                                {{ Form::select('country', ['México'], null, ['class' => 'select']) }}
-                            </div>
-                            <!-- /.form-group -->
-                            <div class="form-group">
-                                {{ Form::label('state', 'Estado', ['class' => 'label']) }}
-                                {{ Form::select('state', ['Yucatán'], null, ['class' => 'select']) }}
-                            </div>
-                            <!-- /.form-group -->
-                            <div class="form-group">
-                                {{ Form::label('city', 'Ciudad', ['class' => 'label']) }}
-                                {{ Form::select('city', ['Mérida'], null, ['class' => 'select']) }}
-                            </div>
-                            <!-- /.form-group -->
-                            <div class="form-group">
-                                {{ Form::label('zipcode', 'Código Postal', ['class' => 'label']) }}
-                                {{ Form::input('text', 'zipcode', '97203', ['class' => 'input']) }}
-                            </div>
-                            <!-- /.form-group -->
-                        {{ Form::close() }}
-                    </div>
-                    <!-- /.shipping -->
-                    <div class="payment-method">
-                        <h2 class="title">Método de pago</h2>
-                        <!-- /.title -->
-                        <div class="credit-card">
-                            {{ Form::open(['url' => '/', 'class' => 'credit-card-form form']) }}
+                    {{ Form::open(['url' => 'pago/conekta', 'class' => 'checkout_form form', 'id' => 'checkout_form']) }}
+                        @php
+                            $logged = auth()->check();
+                        @endphp
+                        <div class="shipping">
+                            <h2 class="title">Datos de envío</h2>
+                            <!-- /.title -->
+                            <div id="shipping_form">
                                 <div class="form-group">
-                                    {{ Form::label('name', 'Nombre', ['class' => 'label']) }}
-                                    {{ Form::input('text', 'name', 'Asael Chávez Jaimes', ['class' => 'input']) }}
+                                    {{ Form::label('shipping[firstname]', 'Nombre(s)', ['class' => 'label']) }}
+                                    {{ Form::input('text', 'shipping[firstname]', null, ['class' => 'input']) }}
                                 </div>
                                 <!-- /.form-group -->
                                 <div class="form-group">
-                                    {{ Form::label('address', 'Dirección', ['class' => 'label']) }}
-                                    {{ Form::input('text', 'address', 'Calle Plutón Mz 2 Lt 8 Valle del Sol', ['class' => 'input']) }}
+                                    {{ Form::label('shipping[lastname]', 'Apellido(s)', ['class' => 'label']) }}
+                                    {{ Form::input('text', 'shipping[lastname]', null, ['class' => 'input']) }}
                                 </div>
                                 <!-- /.form-group -->
                                 <div class="form-group">
-                                    {{ Form::label('card', 'Número de tarjeta', ['class' => 'label']) }}
-                                    {{ Form::input('text', 'card', '4242 4242 4242 4242', ['class' => 'input']) }}
+                                    {{ Form::label('shipping[address]', 'Dirección', ['class' => 'label']) }}
+                                    {{ Form::input('text', 'shipping[address]', null, ['class' => 'input']) }}
                                 </div>
                                 <!-- /.form-group -->
                                 <div class="form-group">
-                                    {{ Form::label('expired', 'Fecha de caducidad', ['class' => 'label']) }}
-                                    <div class="row">
-                                        <div class="col-6">
-                                            {{ Form::input('text', 'month', '07', ['class' => 'input']) }}
-                                        </div>
-                                        <!-- /.col-6 -->
-                                        <div class="col-6">
-                                            {{ Form::input('text', 'year', '2020', ['class' => 'input']) }}
-                                        </div>
-                                        <!-- /.col-6 -->
-                                    </div>
-                                    <!-- /.row -->
+                                    {{ Form::label('shipping[country]', 'País', ['class' => 'label']) }}
+                                    {{ Form::select('shipping[country]', $countries, null, ['class' => 'select']) }}
                                 </div>
                                 <!-- /.form-group -->
                                 <div class="form-group">
-                                    {{ Form::label('cvc', 'CVC', ['class' => 'label']) }}
-                                    {{ Form::input('text', 'cvc', '789', ['class' => 'input']) }}
+                                    {{ Form::label('shipping[state]', 'Estado', ['class' => 'label']) }}
+                                    {{ Form::select('shipping[state]', $states, null, ['class' => 'select']) }}
                                 </div>
                                 <!-- /.form-group -->
-                            {{ Form::close() }}
+                                <div class="form-group">
+                                    {{ Form::label('shipping[city]', 'Ciudad', ['class' => 'label']) }}
+                                    {{ Form::select('shipping[city]', $cities, null, ['class' => 'select']) }}
+                                </div>
+                                <!-- /.form-group -->
+                                <div class="form-group">
+                                    {{ Form::label('shipping[zipcode]', 'Código Postal', ['class' => 'label']) }}
+                                    {{ Form::input('text', 'shipping[zipcode]', null, ['class' => 'input']) }}
+                                </div>
+                                <!-- /.form-group -->
+                                <div class="form-group">
+                                    {{ Form::label('shipping[phone]', 'Teléfono', ['class' => 'label']) }}
+                                    {{ Form::input('text', 'shipping[phone]', null, ['class' => 'input']) }}
+                                </div>
+                                <!-- /.form-group -->
+                                <div class="form-group">
+                                    {{ Form::label('shipping[email]', 'Correo electrónico', ['class' => 'label']) }}
+                                    {{ Form::input('text', 'shipping[email]', null, ['class' => 'input']) }}
+                                </div>
+                                <!-- /.form-group -->
+                            </div><!-- /#shipping_form -->
                         </div>
-                        <!-- /.credit-card -->
-                    </div>
-                    <!-- /.payment-method -->
+                        <!-- /.shipping -->
+                        <div class="payment-method">
+                            <h2 class="title">Método de pago</h2>
+                            <!-- /.title -->
+                            <div class="form-group">
+                                <div class="radio-button">
+                                    {{ Form::radio('payment_method', 'card', true, ['id' => 'card', 'class' => 'radio checkbox_payment']) }}
+                                    {{ Form::label('card', 'Tarjeta de crédito/débito') }}
+                                </div><!-- /.radio-button -->
+                                <div class="radio-button">
+                                    {{ Form::radio('payment_method', 'oxxo_cash', null, ['id' => 'oxxo_cash', 'class' => 'radio checkbox_payment']) }}
+                                    {{ Form::label('oxxo_cash', 'OXXO') }}
+                                </div><!-- /.radio-button -->
+                                <div class="radio-button">
+                                    {{ Form::radio('payment_method', 'spei', null, ['id' => 'spei', 'class' => 'radio checkbox_payment']) }}
+                                    {{ Form::label('spei', 'Transferencia Bancaria') }}
+                                </div><!-- /.radio-button -->
+                            </div><!-- /.form-group -->
+                            <div data-payment="card" class="method-form">
+                                <div class="form-group">
+                                    <div class="info">
+                                        <div class="card-errors"></div><!-- /.card-errors -->
+                                    </div><!-- /.info -->
+                                </div><!-- /.form-group -->
+                                <div class="form-group">
+                                    {{ Form::label('card[name]', 'Nombre del tarjetahabiente', ['class' => 'label']) }}
+                                    {{ Form::input('text', null, null, ['class' => 'input', 'data-conekta' => 'card[name]']) }}
+                                </div><!-- /.form-group -->
+                                <div class="form-group">
+                                    {{ Form::label('card[number]', 'Número de tarjeta', ['class' => 'label']) }}
+                                    {{ Form::input('text', null, null, ['class' => 'input', 'data-conekta' => 'card[number]']) }}
+                                </div><!-- /.form-group -->
+                                <div class="form-group">
+                                    {{ Form::label('card[cvc]', 'CVC', ['class' => 'label']) }}
+                                    {{ Form::input('text', null, null, ['class' => 'input', 'data-conekta' => 'card[cvc]']) }}
+                                </div><!-- /.form-group -->
+                                <div class="form-group">
+                                    {{ Form::label('card[exp_month]', 'Mes de expiración (MM)', ['class' => 'label']) }}
+                                    {{ Form::input('text', null, null, ['class' => 'input', 'data-conekta' => 'card[exp_month]']) }}
+                                </div><!-- /.form-group -->
+                                <div class="form-group">
+                                    {{ Form::label('card[exp_year]', 'Año de expiración (YYYY)', ['class' => 'label']) }}
+                                    {{ Form::input('text', null, null, ['class' => 'input', 'data-conekta' => 'card[exp_year]']) }}
+                                </div><!-- /.form-group -->
+                            </div><!-- /#credit_card -->
+                            <div data-payment="oxxo_cash" class="method-form">
+                                <div class="info form-group">
+                                    <p>Por favor realiza el pago en el OXXO más cercano utilizando la ficha de pago.</p>
+                                </div><!-- /.info -->
+                            </div><!-- /#oxxo_cash -->
+                            <div data-payment="spei" class="method-form">
+                                <div class="info form-group">
+                                    <p>Por favor realiza el pago el portal de tu banco utilizando la ficha de pago.</p>
+                                </div><!-- /.info -->
+                            </div><!-- /#spei -->
+                        </div><!-- /.payment-method -->
+                        <div class="billing">
+                            <div id="billing_form">
+                                <h2 class="title">Datos de facturación</h2>
+                                <!-- /.title -->
+                                <div class="form-group">
+                                    {{ Form::label('billing[firstname]', 'Nombre(s)', ['class' => 'label']) }}
+                                    {{ Form::input('text', 'billing[firstname]', null, ['class' => 'input']) }}
+                                </div>
+                                <!-- /.form-group -->
+                                <div class="form-group">
+                                    {{ Form::label('billing[lastname]', 'Apellido(s)', ['class' => 'label']) }}
+                                    {{ Form::input('text', 'billing[lastname]', null, ['class' => 'input']) }}
+                                </div>
+                                <!-- /.form-group -->
+                                <div class="form-group">
+                                    {{ Form::label('billing[address]', 'Dirección', ['class' => 'label']) }}
+                                    {{ Form::input('text', 'billing[address]', null, ['class' => 'input']) }}
+                                </div>
+                                <!-- /.form-group -->
+                                <div class="form-group">
+                                    {{ Form::label('billing[country]', 'País', ['class' => 'label']) }}
+                                    {{ Form::select('billing[country]', $countries, null, ['class' => 'select']) }}
+                                </div>
+                                <!-- /.form-group -->
+                                <div class="form-group">
+                                    {{ Form::label('billing[state]', 'Estado', ['class' => 'label']) }}
+                                    {{ Form::select('billing[state]', $states, null, ['class' => 'select']) }}
+                                </div>
+                                <!-- /.form-group -->
+                                <div class="form-group">
+                                    {{ Form::label('billing[city]', 'Ciudad', ['class' => 'label']) }}
+                                    {{ Form::select('billing[city]', $cities, null, ['class' => 'select']) }}
+                                </div>
+                                <!-- /.form-group -->
+                                <div class="form-group">
+                                    {{ Form::label('billing[zipcode]', 'Código Postal', ['class' => 'label']) }}
+                                    {{ Form::input('text', 'billing[zipcode]', null, ['class' => 'input']) }}
+                                </div>
+                                <!-- /.form-group -->
+                                <div class="form-group">
+                                    {{ Form::label('billing[phone]', 'Teléfono', ['class' => 'label']) }}
+                                    {{ Form::input('text', 'billing[phone]', null, ['class' => 'input']) }}
+                                </div>
+                                <!-- /.form-group -->
+                                <div class="form-group">
+                                    {{ Form::label('billing[email]', 'Correo electrónico', ['class' => 'label']) }}
+                                    {{ Form::input('text', 'billing[email]', null, ['class' => 'input']) }}
+                                </div>
+                                <!-- /.form-group -->
+                            </div><!-- /#billing_form -->
+                        </div><!-- /.billing -->
+                    {{ Form::close() }}
                 </div>
                 <!-- /.col-6 -->
                 <div class="col-6">
@@ -183,46 +197,53 @@
                                 <!-- /.tr -->
                             </thead>
                             <!-- /.thead -->
-                            <tbody class="tbody">
-                                @if (!$products->isEmpty())
-                                    @foreach ($products as $product)
-                                        <tr class="tr">
-                                            <td class="td"><span class="title">{{ $product->title }} (2)</span></td>
-                                            <!-- /.td -->
-                                            <td class="td"><span class="price">${{ $product->sale_price }}</span></td>
-                                            <!-- /.td -->
-                                            <td class="td"><span class="price">${{ $product->sale_price * 2 }}</span></td>
-                                            <!-- /.td -->
+                            <tbody>
+                                @if (!$cart->quantities->isEmpty())
+                                    @foreach ($cart->quantities as $item)
+                                        @php
+                                            $price = (!is_null($item->product->sale_price)) ? $item->product->sale_price : $item->product->regular_price;
+                                        @endphp
+                                        <tr>
+                                            <td><span class="title">{{ $item->product->title }} ({{ $item->quantity }})</span></td>
+                                            <td>
+                                                <span class="price">
+                                                    <span class="currency-symbol">$</span>
+                                                    <span class="product-price">{{ $price }}</span>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span class="price">
+                                                    <span class="currency-symbol">$</span>
+                                                    <span class="product-total">{{ $item->quantity * $price }}</span>
+                                                </span>
+                                            </td>
                                         </tr>
-                                        <!-- /.tr -->
                                     @endforeach
                                 @endif
                             </tbody>
-                            <!-- /.tbody -->
                         </table>
                         <!-- /.table -->
                         <div class="totals">
                             <div class="subtotal row">
                                 <div class="col-8"><span class="title">Subtotal</span></div>
                                 <!-- /.col-8 -->
-                                <div class="col-4"><span class="price">$20800.00</span></div>
+                                <div class="col-4">
+                                    <span class="price">
+                                        <span class="currency-symbol">$</span>
+                                        <span class="subtotal-price">{{ $cart->subtotal }}</span>
+                                    </span>
+                                </div>
                                 <!-- /.col-4 -->
                             </div>
                             <!-- /.subtotal -->
                             <div class="shipping row">
                                 <div class="col-8"><span class="title">Envío</span></div>
                                 <!-- /.col-8 -->
-                                <div class="col-4"><span class="price">$40.00</span></div>
-                                <!-- /.col-4 -->
+                                <div class="col-4">
+                                    {{ Form::select('shipping_method', $rates, null, ['class' => 'select']) }}
+                                </div><!-- /.col-4 -->
                             </div>
                             <!-- /.shipping -->
-                            <div class="taxes row">
-                                <div class="col-8"><span class="title">Impuestos (IVA 16%)</span></div>
-                                <!-- /.col-8 -->
-                                <div class="col-4"><span class="price">$3334.40</span></div>
-                                <!-- /.col-4 -->
-                            </div>
-                            <!-- /.taxes -->
                             <div class="total row">
                                 <div class="col-8"><span class="title">Total</span></div>
                                 <!-- /.col-8 -->
@@ -232,8 +253,8 @@
                             <!-- /.total -->
                             <div class="place-order row">
                                 <div class="col-12">
-                                    {{-- <button class="btn btn-green">Pagar</button> --}}
-                                    <a href="{{ url('gracias') }}" class="btn btn-green">Pagar</a>
+                                    <button class="btn btn-green" id="submit">Pagar</button>
+                                    {{-- <a href="{{ url('gracias') }}" class="btn btn-green">Pagar</a> --}}
                                 </div>
                                 <!-- /.col-12 -->
                             </div>

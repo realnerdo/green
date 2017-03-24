@@ -1,0 +1,27 @@
+// Notifications
+
+.notification
+	+opacity(0)
+	animation: up-in .6s .5s forwards $bouncy
+	background: $green
+	box-shadow: 0 2px 3px 2px rgba($black, 0.1)
+	left: 0
+	padding: 1rem
+	position: fixed
+	top: 0
+	width: 100%
+	z-index: 50
+	.message
+		+font-size(14px)
+		color: $white
+	.close-notification
+		+font-size(20px)
+		appearance: none
+		background: none
+		border: 0
+		color: $white
+		position: absolute
+		right: 1rem
+		top: .5rem
+		&:hover
+			cursor: pointer

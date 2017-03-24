@@ -13,7 +13,11 @@ class Cart extends Model
      * @var array
      */
     protected $fillable = [
-        'session'
+        'session',
+        'subtotal',
+        'service_fee',
+        'shipping_fee',
+        'conekta_fee'
     ];
 
     /**

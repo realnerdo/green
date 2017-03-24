@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Collection;
+use App\Product;
 
 class CollectionController extends Controller
 {
@@ -25,6 +26,7 @@ class CollectionController extends Controller
      */
     public function show()
     {
-        return view('single_collection');
+        $products = Product::all();
+        return view('single_collection', compact('products'));
     }
 }

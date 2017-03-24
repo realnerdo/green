@@ -25,3 +25,13 @@
             .place-order
                 .btn
                     +font-size(18px)
+    .method-form
+        display: none
+        &[data-payment="card"]
+            display: block
+        .info
+            background: $cloud
+            border: 2px solid $gray
+            border-radius: rem(3px)
+            color: $title
+            padding: 2rem 1rem

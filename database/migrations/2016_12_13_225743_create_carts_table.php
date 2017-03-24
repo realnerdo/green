@@ -15,6 +15,10 @@ class CreateCartsTable extends Migration
     {
         Schema::create('carts', function(Blueprint $table) {
             $table->increments('id');
+            $table->float('subtotal')->nullable();
+            $table->float('service_fee')->nullable();
+            $table->float('shipping_fee')->nullable();
+            $table->float('conekta_fee')->nullable();
             $table->string('session')->nullable();
             $table->integer('user_id')->unsigned()->nullable();
             $table->timestamps();

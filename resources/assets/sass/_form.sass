@@ -18,21 +18,47 @@
         .input
             +font-size(16px)
             background: $white
-            border: 1px solid $border
-            border-radius: rem(2px)
+            border: 3px solid $muted
+            border-radius: rem(5px)
             color: $text
             font-family: $sans
             padding: 1rem 1.2rem
+            transition: border 0.2s ease-in-out
             width: 100%
+            &:focus
+                border: 3px solid $blue
         .select
             +font-size(16px)
             appearance: none
             background: url('../img/caret-down.svg') no-repeat, $white
             background-position: right 1rem center
-            border: 1px solid $border
-            border-radius: rem(2px)
+            border: 3px solid $muted
+            border-radius: rem(5px)
             color: $text
             font-family: $sans
             outline: none
             padding: 1rem 1.2rem
             width: 100%
+        .radio-button
+            display: inline-block
+            label
+                display: block
+                background: $cloud
+                border: 2px solid $gray
+                border-radius: rem(5px)
+                padding: 1rem
+                margin-right: .5rem
+                transition: all .1s ease-in-out
+                &:hover
+                    cursor: pointer
+                    background: $green
+                    border: 2px solid $green
+                    color: $white
+            &:last-child
+                margin: 0
+            .radio
+                display: none //?
+                &:checked+label
+                    background: $green
+                    border: 2px solid $green
+                    color: $white

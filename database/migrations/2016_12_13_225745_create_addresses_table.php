@@ -43,6 +43,6 @@ class CreateAddressesTable extends Migration
             $table->dropForeign(['user_id']);
         });
 
-        Schema::drop('cities');
+        Schema::drop('addresses');
     }
 }

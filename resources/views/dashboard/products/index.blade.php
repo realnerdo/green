@@ -41,6 +41,9 @@
                     <!-- /.thead -->
                     <tbody class="tbody">
                         @foreach ($products as $product)
+                            @php
+                                $price = (is_null($product->sale_price)) ? $product->regular_price : $product->sale_price;
+                            @endphp
                             <tr class="tr">
                                 <td class="td">
                                     <div class="photo">
@@ -54,7 +57,7 @@
                                 </td>
                                 <!-- /.td -->
                                 <td class="td">
-                                    <span class="price">${{ $product->sale_price }}</span>
+                                    <span class="price">${{ $price }}</span>
                                 </td>
                                 <!-- /.td -->
                                 <td class="td">

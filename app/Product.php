@@ -8,6 +8,7 @@ use App\User;
 use App\Category;
 use App\Media;
 use App\Quantity;
+use App\Review;
 
 class Product extends Model
 {
@@ -42,7 +43,17 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'slug', 'description', 'sku', 'regular_price', 'sale_price', 'stock', 'user_id' // Remove user_id
+        'title',
+        'slug',
+        'description',
+        'sku',
+        'regular_price',
+        'sale_price',
+        'stock',
+        'length',
+        'height',
+        'width',
+        'user_id' // Remove user_id
     ];
 
     /**
@@ -91,5 +102,10 @@ class Product extends Model
     public function getCategoryListAttribute()
     {
         return $this->categories->pluck('id')->all();
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany('App\Review');
     }
 }

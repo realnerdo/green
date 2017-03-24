@@ -10,6 +10,7 @@ use App\Category;
 use App\Media;
 use Intervention\Image\ImageManagerStatic as Image;
 use Auth;
+use Storage;
 
 class ProductController extends Controller
 {
@@ -20,7 +21,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Auth::user()->products()->paginate(5);
+        $products = Auth::user()->products()->latest()->paginate(5);
         return view('dashboard.products.index', compact('products'));
     }
 
@@ -55,6 +56,8 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
+        if($request->input('sale_price') == '')
+            $request->merge(['sale_price' => null]);
         $product = Auth::user()->products()->create($request->all());
 
         $this->syncCats($product, $request->input('category_list'));
@@ -142,10 +145,10 @@ class ProductController extends Controller
     private function uploadFile($product, $files)
     {
         foreach ($files as $file) {
-            $url = $file->store('public/products');
+            $path = $file->store('products', 's3');
             $media = Media::create([
                 'title' => $file->getClientOriginalName(),
-                'url' => str_replace('public/', '', $url),
+                'url' => Storage::disk('s3')->url($path),
                 'original_name' => $file->getClientOriginalName(),
                 'type' => 'image'
             ]);
